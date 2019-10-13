@@ -1,0 +1,11 @@
+export type IPropertyType =
+  | 'string'
+  | 'enum'
+  | 'undefined'
+  | 'null'
+  | 'date'
+  | 'int'
+  | 'float'
+  | 'objectId'
+  | 'boolean'
+  | 'unknown'

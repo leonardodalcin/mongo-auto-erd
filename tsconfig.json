@@ -1,0 +1,25 @@
+{
+  "include": ["source/**/*.ts"],
+  "exclude": ["node_modules", "build"],
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "target": "esnext",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "composite": true,
+    "baseUrl": ".",
+    "outDir": "build",
+    "skipLibCheck": true,
+    "strict": true,
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "@mongoWrapper/*": ["source/mongoWrapper/*"],
+      "@interfaces/*": ["source/interfaces/*"],
+      "@CLI/*": ["source/services/*"],
+      "@useCases/*": ["source/useCases/*"],
+      "@fileSystem/*": ["source/fileSystem/*"],
+      "@collections/*": ["source/collections/*"]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "mongo-auto-erd",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "license": "MIT",
+  "repository": "https://github.com/leonardodalcin/mongo-auto-erd.git",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@types/module-alias": "^2.0.0",
+    "cli-spinner": "^0.2.10",
+    "mongodb": "^3.3.2",
+    "node-spinner": "^0.0.4",
+    "yargs": "^14.2.0"
+  },
+  "devDependencies": {
+    "@shelf/jest-mongodb": "^1.1.1",
+    "@types/cli-spinner": "^0.2.0",
+    "@types/jest": "^24.0.18",
+    "@types/mongodb": "^3.3.5",
+    "@types/yargs": "^13.0.3",
+    "jest": "^24.9.0",
+    "module-alias": "^2.2.2",
+    "mongodb-memory-server": "^5.2.8",
+    "nodemon": "^1.19.3",
+    "reflect-metadata": "^0.1.13",
+    "ts-jest": "^24.1.0",
+    "tslint": "^5.20.0",
+    "typeorm": "^0.2.19",
+    "typescript": "^3.6.3"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}
