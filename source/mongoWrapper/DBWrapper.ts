@@ -4,7 +4,7 @@ import { IPropertyType } from '@interfaces/IPropertyType'
 import { IRelationship } from '@interfaces/IRelationship'
 import { Db, MongoClient } from 'mongodb'
 import { ObjectId } from 'mongodb'
-
+interface ICollectionMapReduceProperty { _id: string; value: string }
 export class DBWrapper {
   public connectURL: string
   public databaseName: string
@@ -35,6 +35,37 @@ export class DBWrapper {
       }
     }
     return ''
+  }
+
+  public async getCollectionRelationships(
+    collectionName: string
+  ): Promise<IRelationship[]> {
+    const objectIdProperties = entity.properties.filter((property) => {
+      return (property.name !== '_id' && property.possibleTypes.includes('objectId'))
+    })
+
+    const relationships = await Promise.all(
+      objectIdProperties.map(async (property) => {
+        const id = property.possibleValues[0]
+        if (!ObjectId.isValid(property.possibleValues[0])) {
+          return
+        }
+        const relatedCollectionName = await this.findCollectionNameByEntityID(
+          new ObjectId(id)
+        )
+        if (relatedCollectionName) {
+          return {
+            propertyName: property.name,
+            sourceCollectionName: entity.collectionName,
+            targetCollectionName: relatedCollectionName,
+            type: 'unknown',
+          } as IRelationship
+        } else {
+          return undefined
+        }
+      })
+    )
+    return relationships.filter((relationship) => relationship !== undefined) as IRelationship[]
   }
 
   public async getEntityRelationships(
@@ -123,8 +154,29 @@ export class DBWrapper {
     })
   }
 
-  // Returns an array of {_id: propertyName, value: val1;val2;val3;} using distinct values
-  public async getEntity(collectionName: string): Promise<IEntity> {
+  public async getEntityProperties(collectionName: string): Promise<IProperty[]> {
+    const mapResult = await this.mapReduceCollectionProperties(collectionName)
+    const entityProperties: IProperty[] = mapResult.map(
+      (item: { _id: string; value: string }) => {
+        const possibleValues = item.value
+          ? String(item.value).split(';')
+          : [item.value]
+        return {
+          name: item._id,
+          possibleTypes: this.getTypesOfTheArray(possibleValues),
+          possibleValues: possibleValues.map((value) => {
+            return value
+              ? String(value)
+                .replace(/ObjectId\("/g, '')
+                .replace(/"\)/g, '')
+              : value
+          })
+        }
+      }
+    )
+  }
+
+  private async mapReduceCollectionProperties(collectionName: string, limitDocs = 50): Promise<ICollectionMapReduceProperty[]> {
     const collection = await this.db.collection(collectionName)
     const mapResult = await collection.mapReduce(
       function() {
@@ -146,36 +198,23 @@ export class DBWrapper {
         })
         return distinctItems.join(';')
       },
-      { out: { inline: 1 }, limit: 50 }
+      { out: { inline: 1 }, limit: limitDocs }
     )
-    const entityProperties: IProperty[] = mapResult.map(
-      (item: { _id: string; value: string }) => {
-        const possibleValues = item.value
-          ? String(item.value).split(';')
-          : [item.value]
-        return {
-          name: item._id,
-          possibleTypes: this.getTypesOfTheArray(possibleValues),
-          possibleValues: possibleValues.map((value) => {
-            return value
-              ? String(value)
-                  .replace(/ObjectId\("/g, '')
-                  .replace(/"\)/g, '')
-              : value
-          })
-        }
-      }
-    )
-
-    const entityRelationships: IRelationship[] = await this.getEntityRelationships(
-      { collectionName, properties: entityProperties, relationships: [] }
-    )
-
-    const entity: IEntity = {
-      collectionName,
-      properties: entityProperties,
-      relationships: entityRelationships
-    }
-    return entity
+    return mapResult as ICollectionMapReduceProperty[]
   }
+  // // Returns an array of {_id: propertyName, value: val1;val2;val3;} using distinct values
+  // public async getEntity(collectionName: string): Promise<IEntity> {
+  //
+  //   const
+  //   const entityRelationships: IRelationship[] = await this.getEntityRelationships(
+  //     { collectionName, properties: entityProperties, relationships: [] }
+  //   )
+  //
+  //   const entity: IEntity = {
+  //     collectionName,
+  //     properties: entityProperties,
+  //     relationships: entityRelationships
+  //   }
+  //   return entity
+  // }
 }

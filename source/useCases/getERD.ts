@@ -8,17 +8,14 @@ spinner.setSpinnerString(14)
 export async function getERD(
   mongoURI: string,
   databaseName: string,
-  outdir: string
+  outdir: string,
+  collectionName: string
 ): Promise<void> {
   const dbWrapper = new DBWrapper(mongoURI, databaseName)
   await dbWrapper.connect()
-  const collectionNames = await dbWrapper.getDBCollectionNames()
-  for (let i = 0; i < collectionNames.length; i++) {
-    spinner.setSpinnerTitle(
-      `Generating entity for collection ${i}/${collectionNames.length}, named: ${collectionNames[i]}. Output file will be saved at: ${outdir}`
-    )
-    spinner.start()
-    FileSystem.writeObjToFile(outdir, await dbWrapper.getEntity(collectionNames[i]))
-    spinner.stop()
-  }
+
+  spinner.start()
+  FileSystem.writeObjToFile(outdir, await dbWrapper.getEntityRelationships(collectionName))
+  spinner.stop()
+
 }
