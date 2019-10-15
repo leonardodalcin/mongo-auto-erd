@@ -1,8 +1,8 @@
-import { IProperty } from 'source/interfaces/IProperty'
+import { IMapReducedProperty } from '@interfaces/IMapReducedProperty'
 import { IRelationship } from 'source/interfaces/IRelationship'
 
 export interface IEntity {
   collectionName: string
-  properties: IProperty[]
+  properties: IMapReducedProperty[]
   relationships: IRelationship[]
 }
