@@ -50,22 +50,36 @@ export class DBWrapper {
     return null
   }
 
+  private async getRelationshipTargetCollectionName(property: IMapReducedProperty) {
+    const objectIds = property.possibleValues.filter((value) => ObjectId.isValid(value))
+    const targetCollectionNames = await Promise.all(objectIds.map((id) => this.findCollectionNameByEntityID(new ObjectId(id))))
+    for(const collectionName of targetCollectionNames) {
+      if (!!collectionName) {
+        return collectionName
+      }
+    }
+    return null
+  }
+  private async getRelationshipType() {
+
+  }
   public async getCollectionRelationships(
     collectionName: string
   ) {
     // : Promise<IRelationship[]> {
-    const collection = await this.getCollectionByName(collectionName)
     const mapReducedCollectionProperties = await this.mapReduceCollectionProperties(collectionName)
     const objectIdReducedProperties = mapReducedCollectionProperties.filter((property) => property.possibleTypes.includes('objectId'))
     /* *At this point we have an array with the following obj
     * {name: 'propName'
     *  possibleTypes: [contains objectId]
     *  possibleValues: []} */
+    const relationshipProps = []
     for(const property of objectIdReducedProperties) {
+      const targetCollectionName = await this.getRelationshipTargetCollectionName(property)
+      if(!targetCollectionName) continue
       let relationshipProperty = {
         name: property.name,
-        sourceCollectionName: collectionName,
-        targetCollectionName: '',
+        targetCollectionName: targetCollectionName,
         relationshipType: [0,0]
       }
       let distinctTypes = getDistinctItems(property.possibleTypes)
@@ -73,15 +87,11 @@ export class DBWrapper {
       if(distinctTypes.includes('undefined') || distinctTypes.includes('null')) {
         relationshipProperty.relationshipType[0] = 0
       }
-      let objectIds = property.possibleValues.filter((value) => ObjectId.isValid(value))
-      const targetCollectionNames = await Promise.all(objectIds.map((id) => this.findCollectionNameByEntityID(new ObjectId(id))))
-      for(const collectionName of targetCollectionNames) {
-        if (!!collectionName) {
-          relationshipProperty.targetCollectionName = collectionName
-          break
-        }
-      }
+      const collection = await this.getCollectionByName(relationshipProperty.targetCollectionName)
+      relationshipProps.push(relationshipProperty)
+
     }
+    return relationshipProps
 
   }
 
