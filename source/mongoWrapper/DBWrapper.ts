@@ -61,21 +61,26 @@ export class DBWrapper {
     * {name: 'propName'
     *  possibleTypes: [contains objectId]
     *  possibleValues: []} */
-    async function defineRelationshipType(this: DBWrapper, property: IMapReducedProperty, collectionName: string) {
-      let distinctTypes = getDistinctItems(property.possibleTypes)
-      let relationship = [1,1]
-      const targetCollectionNames = await Promise.all(relationshipIds.map((id) => this.findCollectionNameByEntityID(new ObjectId(id))))
-      if(targetCollectionNames.includes(null)) {
-        targetRelationshipCanBeUndefined = true
-      }
-    }
-    for (const property of objectIdReducedProperties) {
-      const relationship = {
+    for(const property of objectIdReducedProperties) {
+      let relationshipProperty = {
+        name: property.name,
         sourceCollectionName: collectionName,
-        targetCollectionName: 'targetCollection',
-        type: defineRelationshipType(property)
+        targetCollectionName: '',
+        relationshipType: [0,0]
       }
-
+      let distinctTypes = getDistinctItems(property.possibleTypes)
+      relationshipProperty.relationshipType = [1,1]
+      if(distinctTypes.includes('undefined') || distinctTypes.includes('null')) {
+        relationshipProperty.relationshipType[0] = 0
+      }
+      let objectIds = property.possibleValues.filter((value) => ObjectId.isValid(value))
+      const targetCollectionNames = await Promise.all(objectIds.map((id) => this.findCollectionNameByEntityID(new ObjectId(id))))
+      for(const collectionName of targetCollectionNames) {
+        if (!!collectionName) {
+          relationshipProperty.targetCollectionName = collectionName
+          break
+        }
+      }
     }
 
   }
