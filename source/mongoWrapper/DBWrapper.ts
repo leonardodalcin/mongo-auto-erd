@@ -138,11 +138,10 @@ export class DBWrapper {
   }
 
   // Define item types of an array.
-  public getTypesOfTheArray(items: any[]): IPropertyType[] {
+  public getType(item: any): IPropertyType {
     const floatRegExp = new RegExp(/^-?\d*(\.\d+)?$/)
 
     const intRegExp = new RegExp(/^\d+$/)
-    return items.map(function(item, index) {
       let type: IPropertyType = 'unknown'
       if (typeof item === 'string') {
         type = 'string'
@@ -169,16 +168,7 @@ export class DBWrapper {
         type = 'objectId'
       }
 
-      if (type === 'string') {
-        if (items[index].length === 50) {
-          return 'string'
-        } else {
-          return 'enum'
-        }
-      }
-
       return type
-    })
   }
 
   private async getCollectionByName(collectionName: string) {
@@ -234,19 +224,20 @@ export class DBWrapper {
     )
     return mapResult.map(
       (item: { _id: string; value: string }) => {
-        const possibleValues = item.value
+        const values = item.value
           ? String(item.value).split(';')
           : [item.value]
         return {
           name: item._id,
-          possibleTypes: this.getTypesOfTheArray(possibleValues),
-          possibleValues: possibleValues.map((value) => {
-            return value
+          values: values.map((value) => {
+            return {
+              value: value
               ? String(value)
                 .replace(/ObjectId\("/g, '')
                 .replace(/"\)/g, '')
-              : value
-          })
+              : value,
+              type: this.getType(value)
+          }})
         }
     })
   }

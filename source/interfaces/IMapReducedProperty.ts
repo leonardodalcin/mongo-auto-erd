@@ -2,7 +2,6 @@ import { IPropertyType } from '@interfaces/IPropertyType'
 
 export interface IMapReducedProperty {
   name: string
-  possibleTypes: IPropertyType[]
-  possibleValues: string[]
+  values: {value: any, type: IPropertyType}[]
 }
 
