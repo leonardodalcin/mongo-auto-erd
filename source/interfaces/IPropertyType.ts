@@ -9,3 +9,4 @@ export type IPropertyType =
   | 'objectId'
   | 'boolean'
   | 'unknown'
+  | 'array'
