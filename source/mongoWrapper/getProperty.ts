@@ -1,7 +1,7 @@
 import { IMapReducedProperty } from '@interfaces/IMapReducedProperty'
+import { IProperty } from '@interfaces/IProperty'
 import { getRelationshipTargetCollectionName } from '@mongoWrapper/getRelationshipTargetCollectionName'
 import { getRelationshipType } from '@mongoWrapper/getRelationshipType'
-import { IProperty } from '@interfaces/IProperty'
 
 export async function getProperty(property: IMapReducedProperty): Partial<IProperty> {
   return {

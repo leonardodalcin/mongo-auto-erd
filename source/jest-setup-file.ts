@@ -1,8 +1,8 @@
-import 'reflect-metadata'
 import { Photo } from '@collections/Photo'
 import { User } from '@collections/User'
 import { UserGroup } from '@collections/UserGroup'
 import { MongoMemoryServer } from 'mongodb-memory-server-core'
+import 'reflect-metadata'
 import { createConnection, getMongoManager } from 'typeorm'
 global.mongod = new MongoMemoryServer()
 async function populateDatabase(mongoURI: string, dBName: string) {
@@ -32,4 +32,4 @@ async function populateDatabase(mongoURI: string, dBName: string) {
   await manager.save(user1Photo2)
   await manager.save(user2Photo1)
 }
-(async() => await populateDatabase(await global.mongod.getConnectionString(), await global.mongod.getDbName()))()
+(async () => await populateDatabase(await global.mongod.getConnectionString(), await global.mongod.getDbName()))()
