@@ -1,19 +1,12 @@
-import {ObjectID} from 'mongodb'
-import 'reflect-metadata'
-import {Column, Entity, ObjectIdColumn} from 'typeorm'
-@Entity()
-export class Photo {
+import { Document, model, Schema } from 'mongoose'
 
-  @ObjectIdColumn()
-  public id: ObjectID = new ObjectID()
-  @Column()
-  public URL: string = 'mockedURL'
-
-  @Column()
-  public userId: ObjectID
-
-  constructor(userId: ObjectID) {
-    this.userId = userId
-  }
-
+interface IPhoto extends Document {
+  title: string
+  user: string
 }
+const PhotoModel = model<IPhoto>('Photo', new Schema({
+  title:  String,
+  user:  Schema.Types.ObjectId
+}));
+
+export default PhotoModel

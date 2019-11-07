@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getERD should get an ERD 1`] = `
+Array [
+  Object {
+    "collectionName": "usergroups",
+    "properties": Array [
+      Object {
+        "name": "name",
+        "types": Array [
+          "string",
+        ],
+      },
+    ],
+    "relationships": Array [
+      Object {
+        "propertyName": "__v",
+        "sourceCollectionName": "usergroups",
+        "targetCollectionName": "",
+        "type": "1",
+      },
+      Object {
+        "propertyName": "_id",
+        "sourceCollectionName": "usergroups",
+        "targetCollectionName": "usergroups",
+        "type": "1",
+      },
+      Object {
+        "propertyName": "users",
+        "sourceCollectionName": "usergroups",
+        "targetCollectionName": "users",
+        "type": "1",
+      },
+    ],
+  },
+  Object {
+    "collectionName": "users",
+    "properties": Array [
+      Object {
+        "name": "name",
+        "types": Array [
+          "string",
+        ],
+      },
+    ],
+    "relationships": Array [
+      Object {
+        "propertyName": "__v",
+        "sourceCollectionName": "users",
+        "targetCollectionName": "",
+        "type": "1",
+      },
+      Object {
+        "propertyName": "_id",
+        "sourceCollectionName": "users",
+        "targetCollectionName": "users",
+        "type": "1",
+      },
+    ],
+  },
+  Object {
+    "collectionName": "photos",
+    "properties": Array [
+      Object {
+        "name": "title",
+        "types": Array [
+          "string",
+        ],
+      },
+    ],
+    "relationships": Array [
+      Object {
+        "propertyName": "__v",
+        "sourceCollectionName": "photos",
+        "targetCollectionName": "",
+        "type": "1",
+      },
+      Object {
+        "propertyName": "_id",
+        "sourceCollectionName": "photos",
+        "targetCollectionName": "photos",
+        "type": "1",
+      },
+      Object {
+        "propertyName": "user",
+        "sourceCollectionName": "photos",
+        "targetCollectionName": "users",
+        "type": "1",
+      },
+    ],
+  },
+]
+`;

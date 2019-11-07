@@ -1,14 +1,10 @@
-import {ObjectID} from 'mongodb'
-import 'reflect-metadata'
-import { Column, Entity, ObjectIdColumn } from 'typeorm'
+import { Document, model, Schema } from 'mongoose'
 
-@Entity()
-export class User {
-
-    @ObjectIdColumn()
-    public id: ObjectID = new ObjectID()
-    @Column()
-    public name = 'name'
-
-    constructor() {return this}
+interface IUser extends Document {
+    name: string
 }
+const UserModel = model<IUser>('User', new Schema({
+name:  String,
+}));
+
+export default UserModel

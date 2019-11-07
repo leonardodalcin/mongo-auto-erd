@@ -4,10 +4,10 @@ jest.setTimeout(5000000)
 
 describe.only('getRelationship', () => {
   it('should get an IRelationship', async () => {
-    await getERD(
+    await expect(getERD(
       await global.mongod.getConnectionString(),
       await global.mongod.getDbName(),
       './file.json'
-    )
+    )).resolves.toMatchInlineSnapshot()
   })
 })

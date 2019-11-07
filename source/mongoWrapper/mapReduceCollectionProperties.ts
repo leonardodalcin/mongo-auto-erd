@@ -28,7 +28,7 @@ export async function mapReduceCollectionProperties(collectionName: string, limi
     },
     { out: { inline: 1 }, limit: limitDocs }
   )) as Array<{ _id: string; value: string }>
-  const mapReducedProperties = mapResult.map(
+  return mapResult.map(
     (item) => {
       const values = item.value
         ? String(item.value).split(';')
@@ -39,8 +39,14 @@ export async function mapReduceCollectionProperties(collectionName: string, limi
       }
       for (const value of values) {
         const valueType = getPropertyType(value)
-        if (valueType === 'undefined') { mapReducedProperty.canBeUndefined = true; continue}
-        if (valueType === 'null') { mapReducedProperty.canBeNull = true; continue }
+        if (valueType === 'undefined') {
+          mapReducedProperty.canBeUndefined = true;
+          continue
+        }
+        if (valueType === 'null') {
+          mapReducedProperty.canBeNull = true;
+          continue
+        }
         mapReducedProperty.values.push({
           type: valueType,
           value: value
@@ -53,5 +59,4 @@ export async function mapReduceCollectionProperties(collectionName: string, limi
 
       return mapReducedProperty
     })
-  return mapReducedProperties
 }

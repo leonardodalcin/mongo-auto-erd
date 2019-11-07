@@ -1,5 +1,5 @@
-import { getDB } from '@mongoWrapper/getDB'
+import * as mongoose from "mongoose"
 
 export async function getDBCollectionNames() {
-  return (await(await getDB()).collections()).map((col) => col.collectionName)
+  return (await mongoose.connection.db.listCollections(undefined,{nameOnly:true}).toArray()).map((col)=>col.name)
 }

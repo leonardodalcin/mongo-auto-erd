@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/module-alias": "^2.0.0",
+    "@types/mongoose": "^5.5.30",
     "cli-spinner": "^0.2.10",
     "mongodb": "^3.3.2",
     "node-spinner": "^0.0.4",
@@ -24,6 +25,7 @@
     "jest": "^24.9.0",
     "module-alias": "^2.2.2",
     "mongodb-memory-server": "^5.2.8",
+    "mongoose": "^5.7.8",
     "nodemon": "^1.19.3",
     "reflect-metadata": "^0.1.13",
     "ts-jest": "^24.1.0",

@@ -1,10 +1,11 @@
 import { IEntity } from '@interfaces/IEntity'
 import { getDB } from '@mongoWrapper/getDB'
-import { getDBCollectionNames } from '@mongoWrapper/getDBCollectionNames'
 import { getRelationshipTargetCollectionName } from '@mongoWrapper/getRelationshipTargetCollectionName'
 import { getRelationshipType } from '@mongoWrapper/getRelationshipType'
 import { mapReduceCollectionProperties } from '@mongoWrapper/mapReduceCollectionProperties'
 import { Spinner } from 'cli-spinner'
+import { getDBCollectionNames } from '@mongoWrapper/getDBCollectionNames'
+import { getDistinctItems } from '@mongoWrapper/getDistinctItemsFromArray'
 
 const spinner = new Spinner()
 spinner.setSpinnerString(14)
@@ -13,10 +14,11 @@ export async function getERD(
   mongoURI: string,
   databaseName: string,
   outdir: string
-): Promise<void> {
+): Promise<IEntity[]> {
   await getDB(mongoURI, databaseName)
   spinner.start()
   const collectionNames = await getDBCollectionNames()
+  const entities = []
   for (const collectionName of collectionNames) {
     const entity: IEntity = {
       collectionName,
@@ -36,8 +38,14 @@ export async function getERD(
             (await getRelationshipTargetCollectionName(property)) || '',
           type: (await getRelationshipType(property)) || ''
         })
+      } else {
+        entity.properties.push({name: property.name, types: getDistinctItems(property.values.map((value => value.type)))})
       }
     }
+    entities.push(entity)
+    // FileSystem.writeObjToFile(outdir + collectionName, mapReducedProperties)
   }
+
   spinner.stop()
+  return entities
 }

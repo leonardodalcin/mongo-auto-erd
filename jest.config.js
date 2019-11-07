@@ -1,6 +1,6 @@
 module.exports = {
   preset: 'ts-jest',
-  'setupFiles': ['<rootDir>/source/jest-setup-file.ts'],
+  testEnvironment: 'node',
   moduleNameMapper: {
     '^@mongoWrapper/(.*)$': '<rootDir>/source/mongoWrapper/$1',
     '^@interfaces/(.*)$': '<rootDir>/source/interfaces/$1',

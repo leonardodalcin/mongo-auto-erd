@@ -1,15 +1,14 @@
-import { MongoClient } from 'mongodb'
+import { Db } from 'mongodb'
+import * as mongoose from "mongoose"
 
-let client: MongoClient
-let connectionURL: string
+ let connectionURL: string
 let dbName: string
-export async function getDB(connectURL?: string, databaseName?: string) {
+export async function getDB(connectURL?: string, databaseName?: string): Promise<Db> {
   if (connectURL && databaseName) {
     connectionURL = connectURL
     dbName = databaseName
-    client = new MongoClient(connectionURL, { useNewUrlParser: true, useUnifiedTopology: true })
-    await client.connect()
+    await mongoose.connect(connectURL, {dbName: databaseName})
   }
 
-  return client.db(dbName)
+  return mongoose.connection.db as Db
 }

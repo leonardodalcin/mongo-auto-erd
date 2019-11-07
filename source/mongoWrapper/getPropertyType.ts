@@ -1,5 +1,6 @@
 // Define item types of an array.
 import { IPropertyType } from '@interfaces/IPropertyType'
+import { Types } from 'mongoose'
 
 export function getPropertyType(item: any): IPropertyType {
   const floatRegExp = new RegExp(/^-?\d*(\.\d+)?$/)
@@ -29,6 +30,10 @@ export function getPropertyType(item: any): IPropertyType {
   }
   if (String(item).indexOf('ObjectId(') !== -1) {
     type = 'objectId'
+  }
+  if (Types.ObjectId.isValid(item)) {
+    type = 'objectId'
+
   }
 
   return type
