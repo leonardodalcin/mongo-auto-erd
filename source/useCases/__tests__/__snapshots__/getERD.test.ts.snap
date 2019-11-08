@@ -3,8 +3,45 @@
 exports[`getERD should get an ERD 1`] = `
 Array [
   Object {
+    "collectionName": "photos",
+    "properties": Array [
+      Object {
+        "name": "__v",
+        "types": Array [
+          "int",
+        ],
+      },
+      Object {
+        "name": "title",
+        "types": Array [
+          "string",
+        ],
+      },
+    ],
+    "relationships": Array [
+      Object {
+        "propertyName": "_id",
+        "sourceCollectionName": "photos",
+        "targetCollectionName": "photos",
+        "type": "1",
+      },
+      Object {
+        "propertyName": "user",
+        "sourceCollectionName": "photos",
+        "targetCollectionName": "users",
+        "type": "1",
+      },
+    ],
+  },
+  Object {
     "collectionName": "usergroups",
     "properties": Array [
+      Object {
+        "name": "__v",
+        "types": Array [
+          "int",
+        ],
+      },
       Object {
         "name": "name",
         "types": Array [
@@ -13,12 +50,6 @@ Array [
       },
     ],
     "relationships": Array [
-      Object {
-        "propertyName": "__v",
-        "sourceCollectionName": "usergroups",
-        "targetCollectionName": "",
-        "type": "1",
-      },
       Object {
         "propertyName": "_id",
         "sourceCollectionName": "usergroups",
@@ -37,6 +68,12 @@ Array [
     "collectionName": "users",
     "properties": Array [
       Object {
+        "name": "__v",
+        "types": Array [
+          "int",
+        ],
+      },
+      Object {
         "name": "name",
         "types": Array [
           "string",
@@ -45,45 +82,8 @@ Array [
     ],
     "relationships": Array [
       Object {
-        "propertyName": "__v",
-        "sourceCollectionName": "users",
-        "targetCollectionName": "",
-        "type": "1",
-      },
-      Object {
         "propertyName": "_id",
         "sourceCollectionName": "users",
-        "targetCollectionName": "users",
-        "type": "1",
-      },
-    ],
-  },
-  Object {
-    "collectionName": "photos",
-    "properties": Array [
-      Object {
-        "name": "title",
-        "types": Array [
-          "string",
-        ],
-      },
-    ],
-    "relationships": Array [
-      Object {
-        "propertyName": "__v",
-        "sourceCollectionName": "photos",
-        "targetCollectionName": "",
-        "type": "1",
-      },
-      Object {
-        "propertyName": "_id",
-        "sourceCollectionName": "photos",
-        "targetCollectionName": "photos",
-        "type": "1",
-      },
-      Object {
-        "propertyName": "user",
-        "sourceCollectionName": "photos",
         "targetCollectionName": "users",
         "type": "1",
       },

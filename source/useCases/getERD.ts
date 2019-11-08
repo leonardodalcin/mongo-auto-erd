@@ -30,6 +30,7 @@ export async function getERD(
       collectionName
     )
     for (const property of mapReducedProperties) {
+      console.log(property.values)
       if (property.values.some((value) => value.type === 'objectId')) {
         entity.relationships.push({
           propertyName: property.name,
