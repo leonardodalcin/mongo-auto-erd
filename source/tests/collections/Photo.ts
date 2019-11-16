@@ -7,6 +7,6 @@ interface IPhoto extends Document {
 const PhotoModel = model<IPhoto>('Photo', new Schema({
   title:  String,
   user:  Schema.Types.ObjectId
-}));
+}))
 
 export default PhotoModel

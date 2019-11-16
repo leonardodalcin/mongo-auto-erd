@@ -5,6 +5,6 @@ interface IUser extends Document {
 }
 const UserModel = model<IUser>('User', new Schema({
 name:  {type: String, required: false}
-}));
+}))
 
 export default UserModel

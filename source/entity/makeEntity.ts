@@ -1,12 +1,12 @@
+import { mapEntityRelationships } from '@entity/getRelationshipType'
+import { typeOf } from '@entity/typeOf'
 import { IEntity } from '@interfaces/IEntity'
-import { mapEntityRelationships } from '@mongoWrapper/getRelationshipType'
-import { mapReduceCollectionProperties } from '@mongoWrapper/mapReduceCollectionProperties'
-import { typeOf } from '@mongoWrapper/typeOf'
+import { mapReduceCollectionProperties } from '@mongo/mapReduceCollectionProperties'
 
 export async function makeEntity(collectionName: string) {
-  const reduced = await mapReduceCollectionProperties('photos')
+  const reduced = await mapReduceCollectionProperties(collectionName)
   const entity: IEntity = {
-    name: 'photos',
+    name: collectionName,
     properties: reduced.map((p) => {
       return {
         name: p.name,

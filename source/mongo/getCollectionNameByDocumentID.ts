@@ -1,5 +1,5 @@
-import { getCollectionByName } from '@mongoWrapper/getCollectionByName'
-import { getDBCollectionNames } from '@mongoWrapper/getDBCollectionNames'
+import { getCollectionByName } from '@mongo/getCollectionByName'
+import { getDBCollectionNames } from '@mongo/getDBCollectionNames'
 import { ObjectId } from 'bson'
 
 async function isIDInCollection(id: ObjectId, collectionName: string) {

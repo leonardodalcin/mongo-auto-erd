@@ -10,4 +10,4 @@ export type IPropertyType =
   | 'function'
   | 'symbol'
   | 'bigint'
-| 'object'
+  | 'object'

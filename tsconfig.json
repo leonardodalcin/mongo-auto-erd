@@ -1,7 +1,8 @@
 {
-  "include": ["source/**/*.ts"],
+  "include": [
+    "source/**/*.ts"
+  ],
   "compilerOptions": {
-    "experimentalDecorators": true,
     "target": "esnext",
     "module": "commonjs",
     "moduleResolution": "node",
@@ -9,16 +10,29 @@
     "composite": true,
     "baseUrl": ".",
     "outDir": "build",
-    "skipLibCheck": true,
     "strict": true,
-    "emitDecoratorMetadata": true,
+    "types": [
+      "jest"
+    ],
     "paths": {
-      "@mongoWrapper/*": ["source/mongoWrapper/*"],
-      "@interfaces/*": ["source/interfaces/*"],
-      "@CLI/*": ["source/services/*"],
-      "@useCases/*": ["source/useCases/*"],
-      "@fileSystem/*": ["source/fileSystem/*"],
-      "@collections/*": ["source/collections/*"]
+      "@mongo/*": [
+        "source/mongo/*"
+      ],
+      "@interfaces/*": [
+        "source/interfaces/*"
+      ],
+      "@commands/*": [
+        "source/commands/*"
+      ],
+      "@fileSystem/*": [
+        "source/fileSystem/*"
+      ],
+      "@entity/*": [
+        "source/entity/*"
+      ],
+      "@tests/*": [
+        "source/tests/*"
+      ]
     }
   }
 }

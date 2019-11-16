@@ -1,6 +1,6 @@
 import { IPropertyType } from '@interfaces/IPropertyType'
+import { flattenDeep } from 'lodash'
 import { ObjectID } from 'mongodb'
-
 function isObjectId(item: string | number | ObjectID) {
   if (String(item).indexOf('ObjectId(') !== -1) {
     return true
@@ -13,7 +13,7 @@ function isObjectId(item: string | number | ObjectID) {
 
 export function typeOf(item: any): IPropertyType {
   let itemType: IPropertyType = typeof item as IPropertyType
-  if (itemType as IPropertyType & 'object' === 'object') {
+  if ((itemType as IPropertyType & 'object') === 'object') {
     if (item === null) {
       itemType = 'null'
     }

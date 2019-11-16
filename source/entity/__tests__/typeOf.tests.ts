@@ -1,5 +1,5 @@
+import { typeOf } from '@entity/typeOf'
 import { IPropertyType } from '@interfaces/IPropertyType'
-import { typeOf } from '@mongoWrapper/typeOf'
 import { ObjectID } from 'mongodb'
 
 describe('typeOf', () => {
