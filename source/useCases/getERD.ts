@@ -1,11 +1,11 @@
 import { IEntity } from '@interfaces/IEntity'
 import { getDB } from '@mongoWrapper/getDB'
-import { getRelationshipTargetCollectionName } from '@mongoWrapper/getRelationshipTargetCollectionName'
+import { getDBCollectionNames } from '@mongoWrapper/getDBCollectionNames'
+import { getDistinctItems } from '@mongoWrapper/getDistinctItemsFromArray'
+import { getCollectionNameByDocID } from '@mongoWrapper/getCollectionNameByDocID'
 import { getRelationshipType } from '@mongoWrapper/getRelationshipType'
 import { mapReduceCollectionProperties } from '@mongoWrapper/mapReduceCollectionProperties'
 import { Spinner } from 'cli-spinner'
-import { getDBCollectionNames } from '@mongoWrapper/getDBCollectionNames'
-import { getDistinctItems } from '@mongoWrapper/getDistinctItemsFromArray'
 
 const spinner = new Spinner()
 spinner.setSpinnerString(14)
@@ -36,11 +36,11 @@ export async function getERD(
           propertyName: property.name,
           sourceCollectionName: collectionName,
           targetCollectionName:
-            (await getRelationshipTargetCollectionName(property)) || '',
+            (await getCollectionNameByDocID(property)) || '',
           type: (await getRelationshipType(property)) || ''
         })
       } else {
-        entity.properties.push({name: property.name, types: getDistinctItems(property.values.map((value => value.type)))})
+        entity.properties.push({name: property.name, types: getDistinctItems(property.values.map(((value) => value.type)))})
       }
     }
     entities.push(entity)

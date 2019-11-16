@@ -1,21 +1,23 @@
-import { IMapReducedProperty } from '@interfaces/IMapReducedProperty'
-import { ObjectId } from 'bson'
+import { IEntity } from '@interfaces/IEntity'
+import { getCollectionNameByDocumentID } from '@mongoWrapper/getCollectionNameByDocumentID'
 
-export async function getRelationshipType(property: IMapReducedProperty) {
-  const arrayProps = property.values
-    .filter((value) => value.type === 'array')
-  const objectIds = arrayProps.map((prop) => {
-    return prop.value.filter((value: any) => ObjectId.isValid(value))
-  }).map((stringId) => new ObjectId(stringId))
+export async function mapEntityRelationships(entity: IEntity): Promise<void> {
+  const oidProperties = entity.properties.filter((prop) => {
+    return prop.types.some((type) => type === 'objectId')
+  })
 
-  let relationshipType = '0'
-  if (objectIds.length > 0) {
-    relationshipType = 'n'
-  } else {
-    if (property.values.some((value) => value.type === 'objectId')) {
-      relationshipType = '1'
+  for (let i = 0; i < oidProperties.length; i++) {
+    for (let j = 0; j < oidProperties[i].values.length; j++) {
+      const col = await getCollectionNameByDocumentID(oidProperties[i].values[j])
+      if (col) {
+        const found = entity.relationships.find((rel) => rel.targetCollectionName === col)
+        if (found) {
+          found.propertyNames.push(oidProperties[i].name)
+        } else {
+          entity.relationships.push({ targetCollectionName: col, propertyNames: [oidProperties[i].name] })
+        }
+        break
+      }
     }
   }
-
-  return relationshipType
 }

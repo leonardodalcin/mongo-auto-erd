@@ -1,6 +1,5 @@
 {
   "include": ["source/**/*.ts"],
-  "exclude": ["node_modules", "build"],
   "compilerOptions": {
     "experimentalDecorators": true,
     "target": "esnext",
