@@ -7,7 +7,7 @@ describe('getERD', () => {
   })
   it('should match snapshot', async () => {
     const erd = await getERD(
-      await global.mongod.getConnectionString(),
+      await global.mongod.getUri(),
       await global.mongod.getDbName(),
       'test'
     )
