@@ -1,0 +1,38 @@
+{
+  "include": [
+    "source/**/*.ts"
+  ],
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "composite": true,
+    "baseUrl": ".",
+    "outDir": "build",
+    "strict": true,
+    "types": [
+      "jest"
+    ],
+    "paths": {
+      "@mongo/*": [
+        "source/mongo/*"
+      ],
+      "@interfaces/*": [
+        "source/interfaces/*"
+      ],
+      "@commands/*": [
+        "source/commands/*"
+      ],
+      "@fileSystem/*": [
+        "source/fileSystem/*"
+      ],
+      "@entity/*": [
+        "source/entity/*"
+      ],
+      "@tests/*": [
+        "source/tests/*"
+      ]
+    }
+  }
+}

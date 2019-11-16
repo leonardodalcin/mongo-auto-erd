@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getERD should match snapshot 1`] = `
+Array [
+  Object {
+    "name": "users",
+    "properties": Array [
+      Object {
+        "name": "__v",
+        "types": Array [
+          "number",
+          "number",
+          "number",
+        ],
+        "values": Array [
+          0,
+          0,
+          0,
+        ],
+      },
+      Object {
+        "name": "_id",
+        "types": Array [
+          "objectId",
+          "objectId",
+          "objectId",
+        ],
+        "values": Array [
+          "5dd059f71bb2d30f42694b57",
+          "5dd059f71bb2d30f42694b58",
+          "5dd059f71bb2d30f42694b59",
+        ],
+      },
+      Object {
+        "name": "name",
+        "types": Array [
+          "string",
+          "string",
+        ],
+        "values": Array [
+          "Test user name",
+          "Test user name2",
+        ],
+      },
+    ],
+    "relationships": Array [
+      Object {
+        "propertyNames": Array [
+          "_id",
+        ],
+        "targetCollectionName": "users",
+      },
+    ],
+  },
+  Object {
+    "name": "photos",
+    "properties": Array [
+      Object {
+        "name": "__v",
+        "types": Array [
+          "number",
+          "number",
+        ],
+        "values": Array [
+          0,
+          0,
+        ],
+      },
+      Object {
+        "name": "_id",
+        "types": Array [
+          "objectId",
+          "objectId",
+        ],
+        "values": Array [
+          "5dd059f71bb2d30f42694b5a",
+          "5dd059f71bb2d30f42694b5b",
+        ],
+      },
+      Object {
+        "name": "title",
+        "types": Array [
+          "string",
+          "string",
+        ],
+        "values": Array [
+          "Test photo name",
+          "Test photo name2",
+        ],
+      },
+      Object {
+        "name": "user",
+        "types": Array [
+          "objectId",
+          "objectId",
+        ],
+        "values": Array [
+          "5dd059f71bb2d30f42694b57",
+          "5dd059f71bb2d30f42694b57",
+        ],
+      },
+    ],
+    "relationships": Array [
+      Object {
+        "propertyNames": Array [
+          "_id",
+        ],
+        "targetCollectionName": "photos",
+      },
+      Object {
+        "propertyNames": Array [
+          "user",
+        ],
+        "targetCollectionName": "users",
+      },
+    ],
+  },
+  Object {
+    "name": "usergroups",
+    "properties": Array [
+      Object {
+        "name": "__v",
+        "types": Array [
+          "number",
+          "number",
+        ],
+        "values": Array [
+          0,
+          0,
+        ],
+      },
+      Object {
+        "name": "_id",
+        "types": Array [
+          "objectId",
+          "objectId",
+        ],
+        "values": Array [
+          "5dd059f71bb2d30f42694b5c",
+          "5dd059f71bb2d30f42694b5d",
+        ],
+      },
+      Object {
+        "name": "name",
+        "types": Array [
+          "string",
+          "string",
+        ],
+        "values": Array [
+          "Test user group",
+          "Test user group2",
+        ],
+      },
+      Object {
+        "name": "users",
+        "types": Array [
+          "objectId",
+          "objectId",
+          "objectId",
+          "objectId",
+        ],
+        "values": Array [
+          "5dd059f71bb2d30f42694b57",
+          "5dd059f71bb2d30f42694b57",
+          "5dd059f71bb2d30f42694b57",
+          "5dd059f71bb2d30f42694b57",
+        ],
+      },
+    ],
+    "relationships": Array [
+      Object {
+        "propertyNames": Array [
+          "_id",
+        ],
+        "targetCollectionName": "usergroups",
+      },
+      Object {
+        "propertyNames": Array [
+          "users",
+        ],
+        "targetCollectionName": "users",
+      },
+    ],
+  },
+]
+`;
