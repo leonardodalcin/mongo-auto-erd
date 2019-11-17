@@ -10,7 +10,6 @@ export async function populateDatabase() {
     useUnifiedTopology: true
   })
   const user = await UserModel.create({ name: 'Test user name' })
-
   await UserModel.create({ name: 'Test user name2' })
   await UserModel.create({ name: undefined })
 
