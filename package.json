@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest --forceExit"
   },
   "dependencies": {
     "cli-spinner": "^0.2.10",

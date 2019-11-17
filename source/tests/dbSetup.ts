@@ -1,12 +1,14 @@
 import PhotoModel from '@tests/collections/Photo'
 import UserModel from '@tests/collections/User'
 import UserGroupModel from '@tests/collections/UserGroup'
-import { resetMongo } from '@tests/resetMongo'
 import * as mongoose from 'mongoose'
-jest.setTimeout(60000)
+
 export async function populateDatabase() {
-  await resetMongo()
-  await mongoose.connect(await global.mongod.getUri(), { dbName: await global.mongod.getDbName() })
+  await mongoose.connect(await global.mongod.getUri(), {
+    dbName: await global.mongod.getDbName(),
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
   const user = await UserModel.create({ name: 'Test user name' })
   await UserModel.create({ name: 'Test user name2' })
   await UserModel.create({ name: undefined })

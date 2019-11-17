@@ -3,6 +3,8 @@ module.exports = {
   testEnvironment: 'node',
   testMatch: ['<rootDir>/source/**/*.tests.ts'],
   setupFiles: ['<rootDir>/source/tests/setup.ts'],
+  collectCoverage: true,
+  collectCoverageFrom: ['<rootDir>/source/**/*.ts', '!<rootDir>/source/**/*.tests.ts'],
   moduleNameMapper: {
     '^@commands/(.*)$': '<rootDir>/source/commands/$1',
     '^@entity/(.*)$': '<rootDir>/source/entity/$1',

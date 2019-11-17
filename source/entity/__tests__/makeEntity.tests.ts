@@ -1,9 +1,13 @@
 import { makeEntity } from '@entity/makeEntity'
 import { populateDatabase } from '@tests/dbSetup'
+import { dbTeardown } from '@tests/dbTeardown'
 
 describe('makeEntity', () => {
   beforeAll(async () => {
     await populateDatabase()
+  })
+  afterAll(async () => {
+    await dbTeardown()
   })
   it('should return right relationships for users mock', async () => {
     const entity = await makeEntity('users')

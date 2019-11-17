@@ -8,6 +8,7 @@ export async function mapReduceCollectionProperties(
 ): Promise<IMapReducedProperty[]> {
   const db = await getDB()
   const collection = await db.collection(collectionName)
+  /* istanbul ignore next */
   const mapResult = (await collection.mapReduce(
     function() {
       // @ts-ignore
