@@ -1,18 +1,15 @@
 import { makeEntity } from '@entity/makeEntity'
+import { FileSystem } from '@fileSystem/FileSystem'
 import { IEntity } from '@interfaces/IEntity'
 import { getDB } from '@mongo/getDB'
 import { getDBCollectionNames } from '@mongo/getDBCollectionNames'
 import { Spinner } from 'cli-spinner'
-import { mapReduceCollectionProperties } from 'source/mongo/mapReduceCollectionProperties'
-
-const spinner = new Spinner()
-
-// spinner.setSpinnerString()
 
 export async function getERD(
   mongoURI: string,
   databaseName: string
 ): Promise<IEntity[]> {
+  const spinner = new Spinner()
   spinner.start()
   spinner.setSpinnerTitle('Connecting to database')
   await getDB(mongoURI, databaseName)
@@ -27,5 +24,6 @@ export async function getERD(
     currentCollectionIndex++
   }
   spinner.stop()
+  FileSystem.writeObjToFile('entities.json', entities )
   return entities
 }
