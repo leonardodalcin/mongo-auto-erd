@@ -4,9 +4,11 @@ import { ObjectId } from 'bson'
 
 async function isIDInCollection(id: ObjectId, collectionName: string) {
   const collection = await getCollectionByName(collectionName)
-  return !!(await collection.findOne({_id: id}))
+  return !!(await collection.findOne({ _id: id }))
 }
-export async function getCollectionNameByDocumentID(id: ObjectId): Promise<string | null> {
+export async function getCollectionNameByDocumentID(
+  id: ObjectId
+): Promise<string | null> {
   const collectionNames = await getDBCollectionNames()
   for (let i = 0; i < collectionNames.length; i++) {
     if (await isIDInCollection(id, collectionNames[i])) {
