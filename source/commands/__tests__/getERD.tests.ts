@@ -10,8 +10,7 @@ describe('getERD', () => {
   it('should match snapshot', async () => {
     const erd = await getERD(
       await global.mongod.getUri(),
-      await global.mongod.getDbName(),
-      'test'
+      await global.mongod.getDbName()
     )
     expect(erd).toBeTruthy()
   })

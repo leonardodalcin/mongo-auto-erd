@@ -8,19 +8,21 @@
     "mongo-erd": "build/source/commands/CLI/CLI.js"
   },
   "scripts": {
-    "build": "tsc",
-    "lint": "prettier --write source/**/*.ts && tslint --config tslint.json --project tsconfig.json --fix",
+    "build": "tsc -b",
+    "lint": "concurrently 'prettier --write source/**/*.ts' 'tslint --config tslint.json --project tsconfig.json --fix' 'tsc --noEmit'",
     "test": "jest --forceExit"
   },
   "dependencies": {
     "cli-spinner": "^0.2.10",
     "lodash": "^4.17.15",
+    "module-alias": "^2.2.2",
     "mongodb": "^3.3.2",
     "node-spinner": "^0.0.4",
     "yargs": "^14.2.0"
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "^1.1.1",
+    "concurrently": "^5.0.0",
     "@types/cli-spinner": "^0.2.0",
     "@types/jest": "^24.0.18",
     "@types/lodash": "^4.14.148",
@@ -35,6 +37,13 @@
     "ts-jest": "^24.1.0",
     "tslint": "^5.20.0",
     "typescript": "^3.7.2"
+  },
+  "_moduleAliases": {
+    "@mongo": "build/source/mongo/",
+    "@interfaces": "build/source/interfaces/",
+    "@commands": "build/source/commands/",
+    "@fileSystem": "build/source/fileSystem/",
+    "@entity": "build/source/entity/"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
