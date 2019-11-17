@@ -1,10 +1,14 @@
 import { IMapReducedProperty } from '@interfaces/IMapReducedProperty'
 import { mapReduceCollectionProperties } from '@mongo/mapReduceCollectionProperties'
 import { populateDatabase } from '@tests/dbSetup'
+import { dbTeardown } from '@tests/dbTeardown'
 
 describe('mapReduceCollectionProperties', () => {
   beforeAll(async () => {
     await populateDatabase()
+  })
+  afterAll(async () => {
+    await dbTeardown()
   })
   describe('Tests for user model', () => {
     let properties: IMapReducedProperty[]
