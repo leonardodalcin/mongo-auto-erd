@@ -1,0 +1,1 @@
+{"version":3,"file":"getCollectionByName.js","sourceRoot":"","sources":["../../../source/mongo/getCollectionByName.ts"],"names":[],"mappings":";;AAAA,wCAAoC;AAE7B,KAAK,UAAU,mBAAmB,CAAC,cAAsB;IAC9D,OAAO,CAAC,MAAM,aAAK,EAAE,CAAC,CAAC,UAAU,CAAC,cAAc,CAAC,CAAA;AACnD,CAAC;AAFD,kDAEC"}

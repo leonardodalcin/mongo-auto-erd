@@ -1,0 +1,51 @@
+{
+  "name": "@leonardodalcin/mongo-auto-erd",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "license": "MIT",
+  "repository": "https://github.com/leonardodalcin/mongo-auto-erd.git",
+  "bin": {
+    "mongo-erd": "build/source/commands/CLI/CLI.js"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "lint": "concurrently 'prettier --write source/**/*.ts' 'tslint --config tslint.json --project tsconfig.json --fix' 'tsc --noEmit'",
+    "test": "jest --forceExit"
+  },
+  "dependencies": {
+    "cli-spinner": "^0.2.10",
+    "lodash": "^4.17.15",
+    "module-alias": "^2.2.2",
+    "mongodb": "^3.3.2",
+    "node-spinner": "^0.0.4",
+    "yargs": "^14.2.0"
+  },
+  "devDependencies": {
+    "@shelf/jest-mongodb": "^1.1.1",
+    "concurrently": "^5.0.0",
+    "@types/cli-spinner": "^0.2.0",
+    "@types/jest": "^24.0.18",
+    "@types/lodash": "^4.14.148",
+    "@types/mongodb": "^3.3.5",
+    "@types/mongoose": "^5.5.30",
+    "@types/yargs": "^13.0.3",
+    "jest": "^24.9.0",
+    "mongodb-memory-server": "^6.0.1",
+    "mongoose": "^5.7.8",
+    "nodemon": "^1.19.3",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.1.0",
+    "tslint": "^5.20.0",
+    "typescript": "^3.7.2"
+  },
+  "_moduleAliases": {
+    "@mongo": "build/source/mongo/",
+    "@interfaces": "build/source/interfaces/",
+    "@commands": "build/source/commands/",
+    "@fileSystem": "build/source/fileSystem/",
+    "@entity": "build/source/entity/"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}
