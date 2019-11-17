@@ -16,6 +16,12 @@ export async function populateDatabase() {
   await PhotoModel.create({ title: 'Test photo name', user: user._id })
   await PhotoModel.create({ title: 'Test photo name2', user: user._id })
 
-  await UserGroupModel.create({ name: 'Test user group', users: [user._id, user._id] })
-  await UserGroupModel.create({ name: 'Test user group2', users: [user._id, user._id] })
+  await UserGroupModel.create({
+    name: 'Test user group',
+    users: [user._id, user._id]
+  })
+  await UserGroupModel.create({
+    name: 'Test user group2',
+    users: [user._id, user._id]
+  })
 }

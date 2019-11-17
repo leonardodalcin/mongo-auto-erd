@@ -10,7 +10,11 @@ export async function getDB(
   if (connectURL && databaseName) {
     connectionURL = connectURL
     dbName = databaseName
-    await mongoose.connect(connectURL, { dbName: databaseName, useNewUrlParser: true, useUnifiedTopology: true })
+    await mongoose.connect(connectURL, {
+      dbName: databaseName,
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    })
   }
 
   return mongoose.connection.db as Db
