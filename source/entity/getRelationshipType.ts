@@ -30,8 +30,8 @@ export async function mapEntityRelationships(entity: IEntity): Promise<void> {
           found.propertyNames.push(oidProperties[i].name)
         } else {
           entity.relationships.push({
-            targetCollectionName: col,
-            propertyNames: [oidProperties[i].name]
+            propertyNames: [oidProperties[i].name],
+            targetCollectionName: col
           })
         }
         break
@@ -51,8 +51,8 @@ export async function mapEntityRelationships(entity: IEntity): Promise<void> {
           found.propertyNames.push(arrayProperties[i].name)
         } else {
           entity.relationships.push({
-            targetCollectionName: col,
-            propertyNames: [arrayProperties[i].name]
+            propertyNames: [arrayProperties[i].name],
+            targetCollectionName: col
           })
         }
         break
