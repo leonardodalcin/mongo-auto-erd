@@ -7,7 +7,7 @@ describe('getERD', () => {
         await dbSetup_1.populateDatabase();
     });
     it('should match snapshot', async () => {
-        const erd = await getERD_1.getERD(await global.mongod.getUri(), await global.mongod.getDbName());
+        const erd = await getERD_1.getERD(await global.mongod.getUri(), await global.mongod.getDbName(), './erd');
         expect(erd.length).toBe(3);
     });
 });

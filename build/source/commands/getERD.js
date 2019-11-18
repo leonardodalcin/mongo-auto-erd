@@ -21,7 +21,7 @@ async function getERD(mongoURI, databaseName, outfile) {
         currentCollectionIndex++;
     }
     if (outfile) {
-        FileSystem_1.FileSystem.writeObjToFile(outfile, entities);
+        FileSystem_1.FileSystem.writeObjToFile(outfile + '.json', entities);
     }
     spinner.stop();
     return entities;
