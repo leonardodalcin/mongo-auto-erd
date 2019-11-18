@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const makeEntity_1 = require("@entity/makeEntity");
-const FileSystem_1 = require("@fileSystem/FileSystem");
 const getDB_1 = require("@mongo/getDB");
 const getDBCollectionNames_1 = require("@mongo/getDBCollectionNames");
 const cli_spinner_1 = require("cli-spinner");
@@ -21,7 +20,6 @@ async function getERD(mongoURI, databaseName) {
         currentCollectionIndex++;
     }
     spinner.stop();
-    FileSystem_1.FileSystem.writeObjToFile('entities.json', entities);
     return entities;
 }
 exports.getERD = getERD;

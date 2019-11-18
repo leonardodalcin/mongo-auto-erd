@@ -24,6 +24,5 @@ export async function getERD(
     currentCollectionIndex++
   }
   spinner.stop()
-  FileSystem.writeObjToFile('entities.json', entities )
   return entities
 }
