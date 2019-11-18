@@ -5,5 +5,6 @@
 This is an Entity Relationship Diagram generator for MongoDB databases. Given a connection url, it performs reverse engineering by map reducing db collections into a well defined interface with properties and it's relationships.
 
 ## Usage
-Will connect to the given uri and dbname and produce a `erd.json` outfile.
 `mongo-erd --uri mongodb://127.0.0.1:27017 --db dbname --outfile ./erd`
+
+This command will produce a result like: https://github.com/leonardodalcin/mongo-auto-erd/blob/master/erd.json
