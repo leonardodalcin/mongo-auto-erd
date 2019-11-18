@@ -13,8 +13,8 @@ describe('makeEntity', () => {
     const entity = await makeEntity('users')
     expect(entity.relationships.length).toBe(1)
     expect(entity.relationships[0]).toMatchObject({
-      targetCollectionName: 'users',
-      propertyNames: ['_id']
+      propertyNames: ['_id'],
+      targetCollectionName: 'users'
     })
   })
   it('should return right relationships for photos mock', async () => {

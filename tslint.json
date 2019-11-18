@@ -10,6 +10,5 @@
     "only-arrow-functions": false,
     "trailing-comma": false,
     "quotemark": [true, "single"]
-  },
-  "rulesDirectory": []
+  }
 }
