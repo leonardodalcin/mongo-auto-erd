@@ -7,7 +7,8 @@ import { Spinner } from 'cli-spinner'
 
 export async function getERD(
   mongoURI: string,
-  databaseName: string
+  databaseName: string,
+  outfile?: string
 ): Promise<IEntity[]> {
   const spinner = new Spinner()
   spinner.start()
@@ -23,6 +24,7 @@ export async function getERD(
     entities.push(await makeEntity(collectionName))
     currentCollectionIndex++
   }
+  if (outfile) { FileSystem.writeObjToFile(outfile + '.json', entities) }
   spinner.stop()
   return entities
 }

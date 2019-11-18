@@ -8,7 +8,8 @@ describe('getERD', () => {
   it('should match snapshot', async () => {
     const erd = await getERD(
       await global.mongod.getUri(),
-      await global.mongod.getDbName()
+      await global.mongod.getDbName(),
+      './erd'
     )
     expect(erd.length).toBe(3)
   })
