@@ -11,6 +11,7 @@ module.exports = {
     '^@fileSystem/(.*)$': '<rootDir>/source/fileSystem/$1',
     '^@interfaces/(.*)$': '<rootDir>/source/interfaces/$1',
     '^@mongo/(.*)$': '<rootDir>/source/mongo/$1',
-    '^@tests/(.*)$': '<rootDir>/source/tests/$1'
+    '^@tests/(.*)$': '<rootDir>/source/tests/$1',
+    '^@outputPlugins/(.*)$': '<rootDir>/source/outputPlugins/$1'
   }
 }

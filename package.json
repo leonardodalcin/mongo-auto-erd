@@ -14,21 +14,24 @@
   },
   "dependencies": {
     "cli-spinner": "^0.2.10",
+    "graphviz": "0.0.9",
     "lodash": "^4.17.15",
     "module-alias": "^2.2.2",
     "mongodb": "^3.3.2",
     "node-spinner": "^0.0.4",
+    "ts-graphviz": "0.0.4",
     "yargs": "^14.2.0"
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "^1.1.1",
-    "concurrently": "^5.0.0",
     "@types/cli-spinner": "^0.2.0",
+    "@types/graphviz": "0.0.30",
     "@types/jest": "^24.0.18",
     "@types/lodash": "^4.14.148",
     "@types/mongodb": "^3.3.5",
     "@types/mongoose": "^5.5.30",
     "@types/yargs": "^13.0.3",
+    "concurrently": "^5.0.0",
     "jest": "^24.9.0",
     "mongodb-memory-server": "^6.0.1",
     "mongoose": "^5.7.8",
@@ -43,9 +46,7 @@
     "@interfaces": "build/source/interfaces/",
     "@commands": "build/source/commands/",
     "@fileSystem": "build/source/fileSystem/",
-    "@entity": "build/source/entity/"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "@entity": "build/source/entity/",
+    "@outputPlugins": "build/source/outputPlugins/"
   }
 }
