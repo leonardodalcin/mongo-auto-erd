@@ -12,16 +12,7 @@ async function getERD(mongoURI, databaseName, outfile) {
     spinner.setSpinnerTitle('Connecting to database');
     await getDB_1.getDB(mongoURI, databaseName);
     const collectionNames = await getDBCollectionNames_1.getDBCollectionNames();
-    const entities = [];
-    const indexCount = collectionNames.length;
-    let currentCollectionIndex = 1;
-    for (const collectionName of collectionNames) {
-        spinner.stop();
-        spinner.setSpinnerTitle(`Defining entity for collection: ${collectionName}' (${currentCollectionIndex}/${indexCount})`);
-        spinner.start();
-        entities.push(await makeEntity_1.makeEntity(collectionName));
-        currentCollectionIndex++;
-    }
+    const entities = await Promise.all(collectionNames.map((name) => makeEntity_1.makeEntity(name)));
     if (outfile) {
         FileSystem_1.FileSystem.writeObjToFile(outfile + '.json', entities);
         convertEntitiesToDotLanguageAndGeneratePNGFile_1.convertEntitiesToDotLanguageAndGeneratePNGFile(entities, outfile + '.png');

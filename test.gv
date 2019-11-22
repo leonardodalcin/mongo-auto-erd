@@ -1,1 +1,0 @@
-"digraph 1 {  "users" [ label = "{"__v":"number","_id":"objectId","name":"string"}" ];  "photos" [ label = "{"__v":"number","_id":"objectId","title":"string","user":"objectId"}" ];  "usergroups" [ label = "{"__v":"number","_id":"objectId","name":"string","users":"objectId"}" ];}"

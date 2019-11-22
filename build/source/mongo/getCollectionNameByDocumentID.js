@@ -8,12 +8,15 @@ async function isIDInCollection(id, collectionName) {
 }
 async function getCollectionNameByDocumentID(id) {
     const collectionNames = await getDBCollectionNames_1.getDBCollectionNames();
-    for (let i = 0; i < collectionNames.length; i++) {
-        if (await isIDInCollection(id, collectionNames[i])) {
-            return collectionNames[i];
+    const responses = await Promise.all(collectionNames.map(async (name) => {
+        if (await isIDInCollection(id, name)) {
+            return name;
         }
-    }
-    return null;
+        else {
+            return null;
+        }
+    }));
+    return responses.find((name) => name !== null);
 }
 exports.getCollectionNameByDocumentID = getCollectionNameByDocumentID;
 //# sourceMappingURL=getCollectionNameByDocumentID.js.map

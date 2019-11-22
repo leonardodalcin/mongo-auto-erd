@@ -1,1 +1,0 @@
-"digraph 1 {\n  \"users\" [ shape =record, label = \"{users | __v : number\\l_id : objectId\\lname : string}\" ];\n  \"photos\" [ shape =record, label = \"{photos | __v : number\\l_id : objectId\\ltitle : string\\luser : objectId}\" ];\n  \"usergroups\" [ shape =record, label = \"{usergroups | __v : number\\l_id : objectId\\lname : string\\lusers : objectId}\" ];\n}\n"

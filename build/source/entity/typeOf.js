@@ -3,10 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongodb_1 = require("mongodb");
 function isObjectId(item) {
     if (String(item).indexOf('ObjectId(') !== -1) {
+        console.log('heere');
         return true;
     }
     if (String(item).length === 12 || String(item).length === 24) {
-        return /^[0-9a-fA-F]+$/.test(String(item)) || mongodb_1.ObjectID.isValid(item);
+        return /^[0-9a-fA-F]+$/.test(String(item)) && mongodb_1.ObjectID.isValid(item);
     }
     return false;
 }

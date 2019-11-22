@@ -3,10 +3,12 @@ import { flattenDeep } from 'lodash'
 import { ObjectID } from 'mongodb'
 function isObjectId(item: string | number | ObjectID) {
   if (String(item).indexOf('ObjectId(') !== -1) {
+    console.log('heere')
     return true
   }
   if (String(item).length === 12 || String(item).length === 24) {
-    return /^[0-9a-fA-F]+$/.test(String(item)) || ObjectID.isValid(item)
+
+    return /^[0-9a-fA-F]+$/.test(String(item)) && ObjectID.isValid(item)
   }
   return false
 }

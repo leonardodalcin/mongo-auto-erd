@@ -14,15 +14,34 @@ async function mapReduceCollectionProperties(collectionName, limitDocs = 50) {
             emit(key, this[key]);
         }
     }, function (key, values) {
-        if (!Array.isArray(values)) {
-            values = [values];
+        let result = [];
+        if (Array.isArray(values)) {
+            result = values;
+        }
+        else {
+            result.push(values);
         }
         return {
             name: key,
-            values
+            values: result
         };
     }, { out: { inline: 1 }, limit: limitDocs }));
-    return mapResult.map((item) => item.value);
+    return mapResult
+        .map((item) => {
+        if (typeof item.value === 'object') {
+            if (!Array.isArray(item.value.values)) {
+                item.value.values = [item.value.values];
+            }
+            return item.value;
+        }
+        else {
+            return {
+                name: item._id,
+                values: [item.value]
+            };
+        }
+    })
+        .filter((result) => result !== null);
 }
 exports.mapReduceCollectionProperties = mapReduceCollectionProperties;
 //# sourceMappingURL=mapReduceCollectionProperties.js.map

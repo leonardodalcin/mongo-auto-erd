@@ -5,7 +5,6 @@ const typeOf_1 = require("@entity/typeOf");
 const mapReduceCollectionProperties_1 = require("@mongo/mapReduceCollectionProperties");
 async function makeEntity(collectionName) {
     const reduced = await mapReduceCollectionProperties_1.mapReduceCollectionProperties(collectionName);
-    console.log(reduced);
     const entity = {
         name: collectionName,
         properties: reduced.map((p) => {

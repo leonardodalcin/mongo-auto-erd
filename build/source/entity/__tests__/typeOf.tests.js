@@ -16,7 +16,8 @@ describe('typeOf', () => {
         null,
         undefined,
         new Array(),
-        { test: 'test' }
+        { test: 'test' },
+        'BrandManaged'
     ];
     const oracle = [
         'number',
@@ -31,7 +32,8 @@ describe('typeOf', () => {
         'null',
         'undefined',
         'array',
-        'object'
+        'object',
+        'string'
     ];
     for (let i = 0; i < values.length; i++) {
         it(`value ${values[i]} should be ${oracle[i]}`, () => {

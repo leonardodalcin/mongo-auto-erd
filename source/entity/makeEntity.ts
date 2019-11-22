@@ -5,7 +5,6 @@ import { mapReduceCollectionProperties } from '@mongo/mapReduceCollectionPropert
 
 export async function makeEntity(collectionName: string) {
   const reduced = await mapReduceCollectionProperties(collectionName)
-  console.log(reduced)
   const entity: IEntity = {
     name: collectionName,
     properties: reduced.map((p) => {

@@ -6,9 +6,11 @@ function entityToNodeLabel(entity) {
     const propLabels = entity.properties.map((property) => {
         return `${property.name} : ${property.types[0]}`;
     });
-    const label = `{${entity.name} | ${propLabels.reduce((previousValue = '', currentValue) => {
-        return `${previousValue}\\l${currentValue}`;
-    })}}`;
+    const label = `{${entity.name} | ${propLabels.length > 0
+        ? propLabels.reduce((previousValue = '', currentValue) => {
+            return `${previousValue}\\l${currentValue}`;
+        })
+        : ''}}`;
     return label;
 }
 function convertEntitiesToDotLanguageAndGeneratePNGFile(entities, filepath) {

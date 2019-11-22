@@ -19,15 +19,33 @@ export async function mapReduceCollectionProperties(
       }
     },
     function(key: any, values: any) {
-      if (!Array.isArray(values)) {
-        values = [values]
+      let result = []
+      if(Array.isArray(values)) {
+        result = values
+      } else {
+        result.push(values)
       }
       return {
         name: key,
-        values
+        values: result
       }
     },
     { out: { inline: 1 }, limit: limitDocs }
   )) as Array<{ _id: string; value: IMapReducedProperty }>
-  return mapResult.map((item) => item.value)
+
+  return mapResult
+    .map((item) => {
+      if (typeof item.value === 'object') {
+        if (!Array.isArray(item.value.values)) {
+          item.value.values = [item.value.values]
+        }
+        return item.value
+      } else {
+        return {
+          name: item._id,
+          values: [item.value]
+        }
+      }
+    })
+    .filter((result) => result !== null) as IMapReducedProperty[]
 }
