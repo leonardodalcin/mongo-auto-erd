@@ -13,18 +13,23 @@ function entityToNodeLabel(entity: IEntity) {
   )}}`
   return label
 }
-export function convertEntitiesToDotLanguage(entities: IEntity[]) {
-  const graph = digraph('1')
+
+export function convertEntitiesToDotLanguageAndGeneratePNGFile(entities: IEntity[], filepath?: string) {
+  const graph = digraph('erd')
   for (const entity of entities) {
     graph.addNode(entity.name, {
       shape: 'record',
       label: entityToNodeLabel(entity)
     })
   }
-  graph.output('png', resolve(__dirname + '.png'))
-  graph.output('dot', resolve(__dirname + '.dot'))
-  graph.output('svg', resolve(__dirname + '.svg'))
-  graph.output('xml', resolve(__dirname + '.xml'))
+  for (const entity of entities) {
+    for (const relationship of entity.relationships) {
+      if (entity.name !== relationship.targetCollectionName)
+        graph.addEdge(entity.name, relationship.targetCollectionName)
+    }
+  }
+
+  if(filepath) graph.output('png', resolve(filepath))
 
   return graph.to_dot()
 }

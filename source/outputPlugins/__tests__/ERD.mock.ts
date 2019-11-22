@@ -6,24 +6,12 @@ export const ERD: IEntity[] = [
     properties: [
       {
         name: '__v',
-        types: [
-          'number',
-          'number',
-          'number'
-        ],
-        values: [
-          0,
-          0,
-          0
-        ]
+        types: ['number', 'number', 'number'],
+        values: [0, 0, 0]
       },
       {
         name: '_id',
-        types: [
-          'objectId',
-          'objectId',
-          'objectId'
-        ],
+        types: ['objectId', 'objectId', 'objectId'],
         values: [
           '5dd1ee368eb901861a2be463',
           '5dd1ee368eb901861a2be464',
@@ -32,21 +20,13 @@ export const ERD: IEntity[] = [
       },
       {
         name: 'name',
-        types: [
-          'string',
-          'string'
-        ],
-        values: [
-          'Test user name',
-          'Test user name2'
-        ]
+        types: ['string', 'string'],
+        values: ['Test user name', 'Test user name2']
       }
     ],
     relationships: [
       {
-        propertyNames: [
-          '_id'
-        ],
+        propertyNames: ['_id'],
         targetCollectionName: 'users'
       }
     ]
@@ -56,60 +36,32 @@ export const ERD: IEntity[] = [
     properties: [
       {
         name: '__v',
-        types: [
-          'number',
-          'number'
-        ],
-        values: [
-          0,
-          0
-        ]
+        types: ['number', 'number'],
+        values: [0, 0]
       },
       {
         name: '_id',
-        types: [
-          'objectId',
-          'objectId'
-        ],
-        values: [
-          '5dd1ee368eb901861a2be466',
-          '5dd1ee368eb901861a2be467'
-        ]
+        types: ['objectId', 'objectId'],
+        values: ['5dd1ee368eb901861a2be466', '5dd1ee368eb901861a2be467']
       },
       {
         name: 'title',
-        types: [
-          'string',
-          'string'
-        ],
-        values: [
-          'Test photo name',
-          'Test photo name2'
-        ]
+        types: ['string', 'string'],
+        values: ['Test photo name', 'Test photo name2']
       },
       {
         name: 'user',
-        types: [
-          'objectId',
-          'objectId'
-        ],
-        values: [
-          '5dd1ee368eb901861a2be463',
-          '5dd1ee368eb901861a2be463'
-        ]
+        types: ['objectId', 'objectId'],
+        values: ['5dd1ee368eb901861a2be463', '5dd1ee368eb901861a2be463']
       }
     ],
     relationships: [
       {
-        propertyNames: [
-          '_id'
-        ],
+        propertyNames: ['_id'],
         targetCollectionName: 'photos'
       },
       {
-        propertyNames: [
-          'user'
-        ],
+        propertyNames: ['user'],
         targetCollectionName: 'users'
       }
     ]
@@ -119,45 +71,22 @@ export const ERD: IEntity[] = [
     properties: [
       {
         name: '__v',
-        types: [
-          'number',
-          'number'
-        ],
-        values: [
-          0,
-          0
-        ]
+        types: ['number', 'number'],
+        values: [0, 0]
       },
       {
         name: '_id',
-        types: [
-          'objectId',
-          'objectId'
-        ],
-        values: [
-          '5dd1ee368eb901861a2be468',
-          '5dd1ee368eb901861a2be469'
-        ]
+        types: ['objectId', 'objectId'],
+        values: ['5dd1ee368eb901861a2be468', '5dd1ee368eb901861a2be469']
       },
       {
         name: 'name',
-        types: [
-          'string',
-          'string'
-        ],
-        values: [
-          'Test user group',
-          'Test user group2'
-        ]
+        types: ['string', 'string'],
+        values: ['Test user group', 'Test user group2']
       },
       {
         name: 'users',
-        types: [
-          'objectId',
-          'objectId',
-          'objectId',
-          'objectId'
-        ],
+        types: ['objectId', 'objectId', 'objectId', 'objectId'],
         values: [
           '5dd1ee368eb901861a2be463',
           '5dd1ee368eb901861a2be463',
@@ -168,15 +97,11 @@ export const ERD: IEntity[] = [
     ],
     relationships: [
       {
-        propertyNames: [
-          '_id'
-        ],
+        propertyNames: ['_id'],
         targetCollectionName: 'usergroups'
       },
       {
-        propertyNames: [
-          'users'
-        ],
+        propertyNames: ['users'],
         targetCollectionName: 'users'
       }
     ]

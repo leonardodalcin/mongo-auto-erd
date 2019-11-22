@@ -169,7 +169,7 @@
         "version": "f0cd56eca9d79b4d7f0d6606e2909a14bce7fa7c78321848d5938da9b8f75919",
         "signature": "f0cd56eca9d79b4d7f0d6606e2909a14bce7fa7c78321848d5938da9b8f75919"
       },
-      "../node_modules/mongodb-memory-server-core/lib/util/mongobinary.d.ts": {
+      "../node_modules/mongodb-memory-server-core/lib/util/MongoBinary.d.ts": {
         "version": "1444c3a9c3b02ef7b2ca910a43f4726b0e9c4e95ed74ed6f3da9e529fb15bca7",
         "signature": "1444c3a9c3b02ef7b2ca910a43f4726b0e9c4e95ed74ed6f3da9e529fb15bca7"
       },
@@ -353,11 +353,11 @@
         "version": "7c7dabe6de2f88a1b4a4d9a15479c2a99b6f5864b434b9d960fc312ba9498c0a",
         "signature": "7c7dabe6de2f88a1b4a4d9a15479c2a99b6f5864b434b9d960fc312ba9498c0a"
       },
-      "../node_modules/mongodb-memory-server-core/lib/util/mongoinstance.d.ts": {
+      "../node_modules/mongodb-memory-server-core/lib/util/MongoInstance.d.ts": {
         "version": "8683a248a0af319391014ea9b0365246d171e4be2ee0f3d1f43dc5453d9081e8",
         "signature": "8683a248a0af319391014ea9b0365246d171e4be2ee0f3d1f43dc5453d9081e8"
       },
-      "../node_modules/mongodb-memory-server-core/lib/mongomemoryserver.d.ts": {
+      "../node_modules/mongodb-memory-server-core/lib/MongoMemoryServer.d.ts": {
         "version": "0ec6b4a83ed9564aa3247c8885e9bbef34380bf66ee260dedec5ba0578635817",
         "signature": "0ec6b4a83ed9564aa3247c8885e9bbef34380bf66ee260dedec5ba0578635817"
       },
@@ -369,7 +369,7 @@
         "version": "81a404cae978932b47d8660d7c737c663733934705bea86d28419f0a755adb70",
         "signature": "81a404cae978932b47d8660d7c737c663733934705bea86d28419f0a755adb70"
       },
-      "../node_modules/mongodb-memory-server-core/lib/mongomemoryreplset.d.ts": {
+      "../node_modules/mongodb-memory-server-core/lib/MongoMemoryReplSet.d.ts": {
         "version": "8453ca93e3136558a1c8a1ddd5245d90d1908069fc6769a069c30bb945e9b717",
         "signature": "8453ca93e3136558a1c8a1ddd5245d90d1908069fc6769a069c30bb945e9b717"
       },
@@ -381,7 +381,7 @@
         "version": "e04b649133d68b663301be1a117e887250cac1c8f0881f928f667a4c9cdcbc6f",
         "signature": "e04b649133d68b663301be1a117e887250cac1c8f0881f928f667a4c9cdcbc6f"
       },
-      "../source/interfaces/ipropertytype.ts": {
+      "../source/interfaces/IPropertyType.ts": {
         "version": "c51fd9ba008e0edcf16906896a433666242bca66523cd700b23ba09b83176502",
         "signature": "31dc0824035e554768513de3dee5915cb27cefb3fdbdb58f8ef764f019696961"
       },
@@ -437,68 +437,76 @@
         "version": "bbf144d4354e2aaa6439f32761f3ee798cc68d1600adab6e2a596f25269f106d",
         "signature": "bbf144d4354e2aaa6439f32761f3ee798cc68d1600adab6e2a596f25269f106d"
       },
-      "../source/entity/typeof.ts": {
+      "../source/entity/typeOf.ts": {
         "version": "23f189fd84058dfce6695a8049cd4699b56708696122da4f107e571f64931836",
         "signature": "34f9997fd828f8b68ac52be5275fbc66d3722ace3dd3a075b2ca3d9979f9090a"
       },
-      "../source/interfaces/imapreducedproperty.ts": {
+      "../source/interfaces/IMapReducedProperty.ts": {
         "version": "0c77d5de129f498ad5b96b343c1e424a702801b301653dae8d5f8fff2f247ad6",
         "signature": "416febb7fc380d7e13b42909393a3d1dfa0cd6f17a847703e51d04f10c9b3589"
       },
-      "../source/interfaces/iproperty.ts": {
+      "../source/interfaces/IProperty.ts": {
         "version": "fed97f3960cf2308307b722c9bd640302c56abe77065a25de02222483d962e3d",
         "signature": "fbb3626715303e9d7145308a0a92212ed3fbb7263320ebcb7311f3c50fa3ce3b"
       },
-      "../source/interfaces/irelationship.ts": {
+      "../source/interfaces/IRelationship.ts": {
         "version": "434f731931ab635a8d571226e6b2e109bf1efff7cb6966422ded946efe216d7c",
         "signature": "b521cf82120ebc7391345473881f33f7e48522f283048ebaf05c6a38f6ae0198"
       },
-      "../source/interfaces/ientity.ts": {
-        "version": "d328268f4f9690896ca14d41217be6701751331ff2740e8f0b208979aaff1a20",
-        "signature": "8804c4520e7f7ccdfdc9357a3587377b72ed34907379028f1b5375a212778639"
+      "../source/interfaces/IEntity.ts": {
+        "version": "35399c90964d78f15df48cb82f9854e4ddab6f06e1b78fd0b12892c50a599dca",
+        "signature": "99dccea4f5d5ad8276f0157c645b7728eb44e7bf7b2480363767949e82eef68b"
       },
       "../node_modules/@types/mongoose/index.d.ts": {
         "version": "b9119c66c285e8d20ed31ed949e8b9fccee90cbb7267eb86d3e9580f53cee35d",
         "signature": "b9119c66c285e8d20ed31ed949e8b9fccee90cbb7267eb86d3e9580f53cee35d"
       },
-      "../source/mongo/getdb.ts": {
+      "../source/mongo/getDB.ts": {
         "version": "ba2e4fbcc7393148212a3dbfbe9f7007ae115aa5b00b557301bfcba3cc7404b3",
         "signature": "48debd8eb3612e9af40a5faa75bbf018bc59dba7b5621a387741c2a282954a58"
       },
-      "../source/mongo/getcollectionbyname.ts": {
+      "../source/mongo/getCollectionByName.ts": {
         "version": "9d2467853b0ba4e2825ed0a5c52f96b58b3d3413e992e95e2d882b1e60d51b1b",
         "signature": "72fb06fc1a9932b6958bb4aba3ef3fd3206e11cd5ad57d5fcb43e3fd673ba19a"
       },
-      "../source/mongo/getdbcollectionnames.ts": {
+      "../source/mongo/getDBCollectionNames.ts": {
         "version": "8a98741745ab40d4dc3fc055f56a89954c49394d52d885388acea7caa6ef6e57",
         "signature": "3635267ae80f9880d0a3fd90040cf912d8deba8cb331b12ab4b905215d82d3f9"
       },
-      "../source/mongo/getcollectionnamebydocumentid.ts": {
+      "../source/mongo/getCollectionNameByDocumentID.ts": {
         "version": "2be1425dc73b574cd7f861d783ab34541071ae5b45bba745f81b686830ef5f82",
         "signature": "0a0d7f881fe47982d492c4625a81cf46e984ffb429d507f73e62599a2b87293b"
       },
-      "../source/entity/getrelationshiptype.ts": {
+      "../source/entity/getRelationshipType.ts": {
         "version": "deee98f4c9826723e11a16c41fc7f09640b1cc418e999912baf055ff79cb2f72",
         "signature": "57e39a8c0c5fa6aa8003e9d6d5e267950786657a8441ff9e4f3b22e3af2686a9"
       },
-      "../source/mongo/mapreducecollectionproperties.ts": {
+      "../source/mongo/mapReduceCollectionProperties.ts": {
         "version": "0e0b5eaa87c6d9695c563dcad2e14b4b6b2fdba67e886011054cd00044613860",
         "signature": "ea33c976b7510282c0e3b0b268baddbb34116586f67c5fe14de0374971d1f259"
       },
-      "../source/entity/makeentity.ts": {
-        "version": "627ea13e5fcfd337e658f6ac32267acafd7fe69cd646383de1430ec32d2286e8",
+      "../source/entity/makeEntity.ts": {
+        "version": "93edb3b0ba64b662b6878879937848a81eb37c6805f4de274c865164dd0834df",
         "signature": "512d9dc09a5fa3425a52351f4ff04dfde829595093d2bbc9d212661724688a43"
       },
-      "../source/filesystem/filesystem.ts": {
+      "../source/fileSystem/FileSystem.ts": {
         "version": "792d1a899f6f400e9606c84976ae8c8e428caf3f591b24ecf8081b7f4d3c06a3",
         "signature": "f4658a5a572749bb93209c53a5aec9ac0466a1617f283641ec00288fc06b9d93"
+      },
+      "../node_modules/@types/graphviz/index.d.ts": {
+        "version": "972a40e323920e3cd51dbb8531870201c317d3edbda692d6b5db648ccc03899d",
+        "signature": "972a40e323920e3cd51dbb8531870201c317d3edbda692d6b5db648ccc03899d"
+      },
+      "../source/outputPlugins/convertEntitiesToDotLanguageAndGeneratePNGFile.ts": {
+        "version": "d82c100b27a97b6c513c1a7b137e69203db3fa703916ae2e200ed10d09cf5c0d",
+        "signature": "b69c9ae39f133c28c49e637aec8ad0043b3c584129124d147c4dbbc5d086535b"
       },
       "../node_modules/@types/cli-spinner/index.d.ts": {
         "version": "f2926139009370f49ae559f91f40708bdd1fe02ad39dc1f5bf48f82c5ce30ebf",
         "signature": "f2926139009370f49ae559f91f40708bdd1fe02ad39dc1f5bf48f82c5ce30ebf"
       },
-      "../source/commands/geterd.ts": {
-        "version": "239b3620e2d95ec90ca2db0fcc1cdeb58fd6833663463c398932de1e3285bfe1",
+      "../source/commands/getERD.ts": {
+        "version": "c81413bb026ffb6ab09e9bc8074a31d5ed6be5784a7df3c915d9d83173841e58",
         "signature": "22f6e98617716f2d36918abb58730c38b1ae6711c399273a0a4fffffc941a66e"
       },
       "../node_modules/@types/yargs-parser/index.d.ts": {
@@ -509,44 +517,52 @@
         "version": "989ea8e89ef2d6a07a1872fcee14be6b9e1920b04f19a4ab149d673f89af67e6",
         "signature": "989ea8e89ef2d6a07a1872fcee14be6b9e1920b04f19a4ab149d673f89af67e6"
       },
-      "../source/commands/cli/cli.ts": {
+      "../source/commands/CLI/CLI.ts": {
         "version": "b8cdab7204f6c1fceae4b16aead44fa2bb9c29ff6b8e132d4daadbfda13d69c5",
         "signature": "43e818adf60173644896298637f47b01d5819b17eda46eaa32d0c7d64724d012"
       },
-      "../source/tests/collections/photo.ts": {
+      "../source/tests/collections/Photo.ts": {
         "version": "2b490ecc3b22b0c50da0b9be2ffbaf67e65fdcc1ebd616b77ae00bcaf5118755",
         "signature": "ff66fb6adbc4373538a81478542c08906ef7d8945fb26b54ea7fcd934e2209b2"
       },
-      "../source/tests/collections/user.ts": {
+      "../source/tests/collections/User.ts": {
         "version": "80c523dc04237dc3f2aa6a89c5bc5a9bf2f07146c311904445ac7544fe7c381c",
         "signature": "d616471bae98dd8a008efcf2fe772b94e0b6a0c413a1d363a537cbbd3bc68433"
       },
-      "../source/tests/collections/usergroup.ts": {
+      "../source/tests/collections/UserGroup.ts": {
         "version": "d965319c90e8cf2556252ffb2b78431853bd724a60a2887cec132f64d1670b4e",
         "signature": "939ebe0f1e925c097b3989464da0c4fa544761e91049ee79f7e93f1765688e09"
       },
-      "../source/tests/dbsetup.ts": {
+      "../source/tests/dbSetup.ts": {
         "version": "f4e7ca0451b28aa0f34b6fe8494bbb5f907c9e23029491ad660c7f285813b42c",
         "signature": "cdb3a5e72b555c970c26b9332932d23b7a436f5aae0353d17afcca95ff80c806"
       },
-      "../source/commands/__tests__/geterd.tests.ts": {
+      "../source/commands/__tests__/getERD.tests.ts": {
         "version": "ff772abd92e9809830d4a3fcc1c737d1ce4de17317368f2f13ec87d6399e2dd7",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
       },
-      "../source/tests/dbteardown.ts": {
+      "../source/tests/dbTeardown.ts": {
         "version": "bd11846a03dd125db6eff23d120bf37bb70d846f8dbcd6b1284e961acd3f3b81",
         "signature": "bfffeb569faf54d717c379cc4ec8490461ba800e8187a112bcc23b92a587721d"
       },
-      "../source/entity/__tests__/makeentity.tests.ts": {
+      "../source/entity/__tests__/makeEntity.tests.ts": {
         "version": "8e2640865fc92a8d57a300bfc6a7d360482767def2f289979b890c017e8f3ec9",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
       },
-      "../source/entity/__tests__/typeof.tests.ts": {
+      "../source/entity/__tests__/typeOf.tests.ts": {
         "version": "e1a9db522f8ca211b62340f85f8c666f4ac0932dd2f29cd166ec5869ecad417a",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
       },
-      "../source/mongo/__tests__/mapreducecollectionproperties.tests.ts": {
+      "../source/mongo/__tests__/mapReduceCollectionProperties.tests.ts": {
         "version": "344351df2095f9ab29e3a008dd00230037e7f30feb855e78b72d9f4fb1815f00",
+        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+      },
+      "../source/outputPlugins/__tests__/ERD.mock.ts": {
+        "version": "590792da96d5d7f5d07415801be69831b2ca9333336d36f7dad1fd58cb0d0427",
+        "signature": "8894fbeb41ea1ad6166f778453fedac350fd1993ecb117b2f93e5fb45566d61d"
+      },
+      "../source/outputPlugins/__tests__/convertEntitiesToDotLanguageAndGeneratePNGFile.tests.ts": {
+        "version": "8294028315938829166c0837c0c58649e599525bb2800e2d2da0903ee6659f65",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
       },
       "../source/tests/setup.ts": {
@@ -596,6 +612,9 @@
         ],
         "@tests/*": [
           "source/tests/*"
+        ],
+        "@outputPlugins/*": [
+          "source/outputPlugins/*"
         ]
       },
       "configFilePath": "../tsconfig.json"
@@ -854,7 +873,7 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/mongodb-memory-server-core/lib/util/mongobinary.d.ts": [
+      "../node_modules/mongodb-memory-server-core/lib/util/MongoBinary.d.ts": [
         "../node_modules/mongodb-memory-server-core/lib/types.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -1218,9 +1237,9 @@
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/mongodb-memory-server-core/lib/util/mongoinstance.d.ts": [
+      "../node_modules/mongodb-memory-server-core/lib/util/MongoInstance.d.ts": [
         "../node_modules/@types/node/child_process.d.ts",
-        "../node_modules/mongodb-memory-server-core/lib/util/mongobinary.d.ts",
+        "../node_modules/mongodb-memory-server-core/lib/util/MongoBinary.d.ts",
         "../node_modules/mongodb-memory-server-core/lib/types.d.ts",
         "../node_modules/@types/node/ts3.2/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -1228,10 +1247,10 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/mongodb-memory-server-core/lib/mongomemoryserver.d.ts": [
+      "../node_modules/mongodb-memory-server-core/lib/MongoMemoryServer.d.ts": [
         "../node_modules/@types/node/child_process.d.ts",
-        "../node_modules/mongodb-memory-server-core/lib/util/mongoinstance.d.ts",
-        "../node_modules/mongodb-memory-server-core/lib/util/mongobinary.d.ts",
+        "../node_modules/mongodb-memory-server-core/lib/util/MongoInstance.d.ts",
+        "../node_modules/mongodb-memory-server-core/lib/util/MongoBinary.d.ts",
         "../node_modules/mongodb-memory-server-core/lib/types.d.ts",
         "../node_modules/@types/node/ts3.2/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -1257,11 +1276,11 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/mongodb-memory-server-core/lib/mongomemoryreplset.d.ts": [
+      "../node_modules/mongodb-memory-server-core/lib/MongoMemoryReplSet.d.ts": [
         "../node_modules/@types/node/events.d.ts",
         "../node_modules/@types/mongodb/index.d.ts",
-        "../node_modules/mongodb-memory-server-core/lib/mongomemoryserver.d.ts",
-        "../node_modules/mongodb-memory-server-core/lib/util/mongobinary.d.ts",
+        "../node_modules/mongodb-memory-server-core/lib/MongoMemoryServer.d.ts",
+        "../node_modules/mongodb-memory-server-core/lib/util/MongoBinary.d.ts",
         "../node_modules/mongodb-memory-server-core/lib/types.d.ts",
         "../node_modules/@types/node/ts3.2/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -1270,10 +1289,10 @@
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../node_modules/mongodb-memory-server-core/lib/index.d.ts": [
-        "../node_modules/mongodb-memory-server-core/lib/util/mongobinary.d.ts",
-        "../node_modules/mongodb-memory-server-core/lib/util/mongoinstance.d.ts",
-        "../node_modules/mongodb-memory-server-core/lib/mongomemoryserver.d.ts",
-        "../node_modules/mongodb-memory-server-core/lib/mongomemoryreplset.d.ts",
+        "../node_modules/mongodb-memory-server-core/lib/util/MongoBinary.d.ts",
+        "../node_modules/mongodb-memory-server-core/lib/util/MongoInstance.d.ts",
+        "../node_modules/mongodb-memory-server-core/lib/MongoMemoryServer.d.ts",
+        "../node_modules/mongodb-memory-server-core/lib/MongoMemoryReplSet.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -1286,7 +1305,7 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/interfaces/ipropertytype.ts": [
+      "../source/interfaces/IPropertyType.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -1526,8 +1545,8 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/entity/typeof.ts": [
-        "../source/interfaces/ipropertytype.ts",
+      "../source/entity/typeOf.ts": [
+        "../source/interfaces/IPropertyType.ts",
         "../node_modules/@types/lodash/ts3.1/index.d.ts",
         "../node_modules/@types/mongodb/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -1535,29 +1554,29 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/interfaces/imapreducedproperty.ts": [
+      "../source/interfaces/IMapReducedProperty.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/interfaces/iproperty.ts": [
-        "../source/interfaces/imapreducedproperty.ts",
-        "../source/interfaces/ipropertytype.ts",
+      "../source/interfaces/IProperty.ts": [
+        "../source/interfaces/IMapReducedProperty.ts",
+        "../source/interfaces/IPropertyType.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/interfaces/irelationship.ts": [
+      "../source/interfaces/IRelationship.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/interfaces/ientity.ts": [
-        "../source/interfaces/iproperty.ts",
-        "../source/interfaces/irelationship.ts",
+      "../source/interfaces/IEntity.ts": [
+        "../source/interfaces/IProperty.ts",
+        "../source/interfaces/IRelationship.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -1574,7 +1593,7 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/mongo/getdb.ts": [
+      "../source/mongo/getDB.ts": [
         "../node_modules/@types/mongodb/index.d.ts",
         "../node_modules/@types/mongoose/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -1582,60 +1601,75 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/mongo/getcollectionbyname.ts": [
-        "../source/mongo/getdb.ts",
+      "../source/mongo/getCollectionByName.ts": [
+        "../source/mongo/getDB.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/mongo/getdbcollectionnames.ts": [
+      "../source/mongo/getDBCollectionNames.ts": [
         "../node_modules/@types/mongoose/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/mongo/getcollectionnamebydocumentid.ts": [
-        "../source/mongo/getcollectionbyname.ts",
-        "../source/mongo/getdbcollectionnames.ts",
+      "../source/mongo/getCollectionNameByDocumentID.ts": [
+        "../source/mongo/getCollectionByName.ts",
+        "../source/mongo/getDBCollectionNames.ts",
         "../node_modules/@types/bson/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/entity/getrelationshiptype.ts": [
-        "../source/entity/typeof.ts",
-        "../source/interfaces/ientity.ts",
-        "../source/mongo/getcollectionnamebydocumentid.ts",
+      "../source/entity/getRelationshipType.ts": [
+        "../source/entity/typeOf.ts",
+        "../source/interfaces/IEntity.ts",
+        "../source/mongo/getCollectionNameByDocumentID.ts",
         "../node_modules/@types/lodash/ts3.1/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/mongo/mapreducecollectionproperties.ts": [
-        "../source/interfaces/imapreducedproperty.ts",
-        "../source/mongo/getdb.ts",
+      "../source/mongo/mapReduceCollectionProperties.ts": [
+        "../source/interfaces/IMapReducedProperty.ts",
+        "../source/mongo/getDB.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/entity/makeentity.ts": [
-        "../source/entity/getrelationshiptype.ts",
-        "../source/entity/typeof.ts",
-        "../source/interfaces/ientity.ts",
-        "../source/mongo/mapreducecollectionproperties.ts",
+      "../source/entity/makeEntity.ts": [
+        "../source/entity/getRelationshipType.ts",
+        "../source/entity/typeOf.ts",
+        "../source/interfaces/IEntity.ts",
+        "../source/mongo/mapReduceCollectionProperties.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/filesystem/filesystem.ts": [
+      "../source/fileSystem/FileSystem.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/path.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/graphviz/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../source/outputPlugins/convertEntitiesToDotLanguageAndGeneratePNGFile.ts": [
+        "../source/interfaces/IEntity.ts",
+        "../node_modules/@types/graphviz/index.d.ts",
+        "../node_modules/@types/node/path.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
@@ -1647,12 +1681,13 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/commands/geterd.ts": [
-        "../source/entity/makeentity.ts",
-        "../source/filesystem/filesystem.ts",
-        "../source/interfaces/ientity.ts",
-        "../source/mongo/getdb.ts",
-        "../source/mongo/getdbcollectionnames.ts",
+      "../source/commands/getERD.ts": [
+        "../source/entity/makeEntity.ts",
+        "../source/fileSystem/FileSystem.ts",
+        "../source/interfaces/IEntity.ts",
+        "../source/mongo/getDB.ts",
+        "../source/mongo/getDBCollectionNames.ts",
+        "../source/outputPlugins/convertEntitiesToDotLanguageAndGeneratePNGFile.ts",
         "../node_modules/@types/cli-spinner/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -1672,83 +1707,98 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/commands/cli/cli.ts": [
-        "../source/commands/geterd.ts",
+      "../source/commands/CLI/CLI.ts": [
+        "../source/commands/getERD.ts",
         "../node_modules/@types/yargs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/tests/collections/photo.ts": [
+      "../source/tests/collections/Photo.ts": [
         "../node_modules/@types/mongoose/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/tests/collections/user.ts": [
+      "../source/tests/collections/User.ts": [
         "../node_modules/@types/mongoose/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/tests/collections/usergroup.ts": [
+      "../source/tests/collections/UserGroup.ts": [
         "../node_modules/@types/mongoose/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/tests/dbsetup.ts": [
-        "../source/tests/collections/photo.ts",
-        "../source/tests/collections/user.ts",
-        "../source/tests/collections/usergroup.ts",
+      "../source/tests/dbSetup.ts": [
+        "../source/tests/collections/Photo.ts",
+        "../source/tests/collections/User.ts",
+        "../source/tests/collections/UserGroup.ts",
         "../node_modules/@types/mongoose/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/commands/__tests__/geterd.tests.ts": [
-        "../source/commands/geterd.ts",
-        "../source/tests/dbsetup.ts",
+      "../source/commands/__tests__/getERD.tests.ts": [
+        "../source/commands/getERD.ts",
+        "../source/tests/dbSetup.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/tests/dbteardown.ts": [
+      "../source/tests/dbTeardown.ts": [
         "../node_modules/@types/mongoose/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/entity/__tests__/makeentity.tests.ts": [
-        "../source/entity/makeentity.ts",
-        "../source/tests/dbsetup.ts",
-        "../source/tests/dbteardown.ts",
+      "../source/entity/__tests__/makeEntity.tests.ts": [
+        "../source/entity/makeEntity.ts",
+        "../source/tests/dbSetup.ts",
+        "../source/tests/dbTeardown.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/entity/__tests__/typeof.tests.ts": [
-        "../source/entity/typeof.ts",
-        "../source/interfaces/ipropertytype.ts",
+      "../source/entity/__tests__/typeOf.tests.ts": [
+        "../source/entity/typeOf.ts",
+        "../source/interfaces/IPropertyType.ts",
         "../node_modules/@types/mongodb/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/mongo/__tests__/mapreducecollectionproperties.tests.ts": [
-        "../source/interfaces/imapreducedproperty.ts",
-        "../source/mongo/mapreducecollectionproperties.ts",
-        "../source/tests/dbsetup.ts",
-        "../source/tests/dbteardown.ts",
+      "../source/mongo/__tests__/mapReduceCollectionProperties.tests.ts": [
+        "../source/interfaces/IMapReducedProperty.ts",
+        "../source/mongo/mapReduceCollectionProperties.ts",
+        "../source/tests/dbSetup.ts",
+        "../source/tests/dbTeardown.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../source/outputPlugins/__tests__/ERD.mock.ts": [
+        "../source/interfaces/IEntity.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../source/outputPlugins/__tests__/convertEntitiesToDotLanguageAndGeneratePNGFile.tests.ts": [
+        "../source/outputPlugins/convertEntitiesToDotLanguageAndGeneratePNGFile.ts",
+        "../source/outputPlugins/__tests__/ERD.mock.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -2036,7 +2086,7 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/mongodb-memory-server-core/lib/util/mongobinary.d.ts": [
+      "../node_modules/mongodb-memory-server-core/lib/util/MongoBinary.d.ts": [
         "../node_modules/mongodb-memory-server-core/lib/types.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -2400,9 +2450,9 @@
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/mongodb-memory-server-core/lib/util/mongoinstance.d.ts": [
+      "../node_modules/mongodb-memory-server-core/lib/util/MongoInstance.d.ts": [
         "../node_modules/@types/node/child_process.d.ts",
-        "../node_modules/mongodb-memory-server-core/lib/util/mongobinary.d.ts",
+        "../node_modules/mongodb-memory-server-core/lib/util/MongoBinary.d.ts",
         "../node_modules/mongodb-memory-server-core/lib/types.d.ts",
         "../node_modules/@types/node/ts3.2/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -2410,10 +2460,10 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/mongodb-memory-server-core/lib/mongomemoryserver.d.ts": [
+      "../node_modules/mongodb-memory-server-core/lib/MongoMemoryServer.d.ts": [
         "../node_modules/@types/node/child_process.d.ts",
-        "../node_modules/mongodb-memory-server-core/lib/util/mongoinstance.d.ts",
-        "../node_modules/mongodb-memory-server-core/lib/util/mongobinary.d.ts",
+        "../node_modules/mongodb-memory-server-core/lib/util/MongoInstance.d.ts",
+        "../node_modules/mongodb-memory-server-core/lib/util/MongoBinary.d.ts",
         "../node_modules/mongodb-memory-server-core/lib/types.d.ts",
         "../node_modules/@types/node/ts3.2/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -2439,11 +2489,11 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/mongodb-memory-server-core/lib/mongomemoryreplset.d.ts": [
+      "../node_modules/mongodb-memory-server-core/lib/MongoMemoryReplSet.d.ts": [
         "../node_modules/@types/node/events.d.ts",
         "../node_modules/@types/mongodb/index.d.ts",
-        "../node_modules/mongodb-memory-server-core/lib/mongomemoryserver.d.ts",
-        "../node_modules/mongodb-memory-server-core/lib/util/mongobinary.d.ts",
+        "../node_modules/mongodb-memory-server-core/lib/MongoMemoryServer.d.ts",
+        "../node_modules/mongodb-memory-server-core/lib/util/MongoBinary.d.ts",
         "../node_modules/mongodb-memory-server-core/lib/types.d.ts",
         "../node_modules/@types/node/ts3.2/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -2702,16 +2752,16 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/entity/typeof.ts": [
-        "../source/interfaces/ipropertytype.ts"
+      "../source/entity/typeOf.ts": [
+        "../source/interfaces/IPropertyType.ts"
       ],
-      "../source/interfaces/iproperty.ts": [
-        "../source/interfaces/imapreducedproperty.ts",
-        "../source/interfaces/ipropertytype.ts"
+      "../source/interfaces/IProperty.ts": [
+        "../source/interfaces/IMapReducedProperty.ts",
+        "../source/interfaces/IPropertyType.ts"
       ],
-      "../source/interfaces/ientity.ts": [
-        "../source/interfaces/iproperty.ts",
-        "../source/interfaces/irelationship.ts"
+      "../source/interfaces/IEntity.ts": [
+        "../source/interfaces/IProperty.ts",
+        "../source/interfaces/IRelationship.ts"
       ],
       "../node_modules/@types/mongoose/index.d.ts": [
         "../node_modules/@types/node/events.d.ts",
@@ -2724,23 +2774,32 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/mongo/getdb.ts": [
+      "../source/mongo/getDB.ts": [
         "../node_modules/@types/mongodb/index.d.ts"
       ],
-      "../source/mongo/getcollectionbyname.ts": [
+      "../source/mongo/getCollectionByName.ts": [
         "../node_modules/@types/mongodb/index.d.ts"
       ],
-      "../source/mongo/getcollectionnamebydocumentid.ts": [
+      "../source/mongo/getCollectionNameByDocumentID.ts": [
         "../node_modules/@types/bson/index.d.ts"
       ],
-      "../source/entity/getrelationshiptype.ts": [
-        "../source/interfaces/ientity.ts"
+      "../source/entity/getRelationshipType.ts": [
+        "../source/interfaces/IEntity.ts"
       ],
-      "../source/mongo/mapreducecollectionproperties.ts": [
-        "../source/interfaces/imapreducedproperty.ts"
+      "../source/mongo/mapReduceCollectionProperties.ts": [
+        "../source/interfaces/IMapReducedProperty.ts"
       ],
-      "../source/entity/makeentity.ts": [
-        "../source/interfaces/ientity.ts"
+      "../source/entity/makeEntity.ts": [
+        "../source/interfaces/IEntity.ts"
+      ],
+      "../node_modules/@types/graphviz/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../source/outputPlugins/convertEntitiesToDotLanguageAndGeneratePNGFile.ts": [
+        "../source/interfaces/IEntity.ts"
       ],
       "../node_modules/@types/cli-spinner/index.d.ts": [
         "../node_modules/@types/node/ts3.2/index.d.ts",
@@ -2749,8 +2808,8 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/commands/geterd.ts": [
-        "../source/interfaces/ientity.ts"
+      "../source/commands/getERD.ts": [
+        "../source/interfaces/IEntity.ts"
       ],
       "../node_modules/@types/yargs-parser/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -2765,14 +2824,17 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../source/tests/collections/photo.ts": [
+      "../source/tests/collections/Photo.ts": [
         "../node_modules/@types/mongoose/index.d.ts"
       ],
-      "../source/tests/collections/user.ts": [
+      "../source/tests/collections/User.ts": [
         "../node_modules/@types/mongoose/index.d.ts"
       ],
-      "../source/tests/collections/usergroup.ts": [
+      "../source/tests/collections/UserGroup.ts": [
         "../node_modules/@types/mongoose/index.d.ts"
+      ],
+      "../source/outputPlugins/__tests__/ERD.mock.ts": [
+        "../source/interfaces/IEntity.ts"
       ],
       "../node_modules/jest-diff/build/types.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -2838,7 +2900,7 @@
       "../node_modules/typescript/lib/lib.esnext.bigint.d.ts",
       "../node_modules/typescript/lib/lib.esnext.full.d.ts",
       "../node_modules/mongodb-memory-server-core/lib/types.d.ts",
-      "../node_modules/mongodb-memory-server-core/lib/util/mongobinary.d.ts",
+      "../node_modules/mongodb-memory-server-core/lib/util/MongoBinary.d.ts",
       "../node_modules/@types/node/globals.d.ts",
       "../node_modules/@types/node/assert.d.ts",
       "../node_modules/@types/node/async_hooks.d.ts",
@@ -2884,14 +2946,14 @@
       "../node_modules/@types/node/ts3.2/util.d.ts",
       "../node_modules/@types/node/ts3.2/globals.d.ts",
       "../node_modules/@types/node/ts3.2/index.d.ts",
-      "../node_modules/mongodb-memory-server-core/lib/util/mongoinstance.d.ts",
-      "../node_modules/mongodb-memory-server-core/lib/mongomemoryserver.d.ts",
+      "../node_modules/mongodb-memory-server-core/lib/util/MongoInstance.d.ts",
+      "../node_modules/mongodb-memory-server-core/lib/MongoMemoryServer.d.ts",
       "../node_modules/@types/bson/index.d.ts",
       "../node_modules/@types/mongodb/index.d.ts",
-      "../node_modules/mongodb-memory-server-core/lib/mongomemoryreplset.d.ts",
+      "../node_modules/mongodb-memory-server-core/lib/MongoMemoryReplSet.d.ts",
       "../node_modules/mongodb-memory-server-core/lib/index.d.ts",
       "../source/global.d.ts",
-      "../source/interfaces/ipropertytype.ts",
+      "../source/interfaces/IPropertyType.ts",
       "../node_modules/@types/lodash/ts3.1/common/common.d.ts",
       "../node_modules/@types/lodash/ts3.1/common/array.d.ts",
       "../node_modules/@types/lodash/ts3.1/common/collection.d.ts",
@@ -2905,38 +2967,42 @@
       "../node_modules/@types/lodash/ts3.1/common/string.d.ts",
       "../node_modules/@types/lodash/ts3.1/common/util.d.ts",
       "../node_modules/@types/lodash/ts3.1/index.d.ts",
-      "../source/entity/typeof.ts",
-      "../source/interfaces/imapreducedproperty.ts",
-      "../source/interfaces/iproperty.ts",
-      "../source/interfaces/irelationship.ts",
-      "../source/interfaces/ientity.ts",
+      "../source/entity/typeOf.ts",
+      "../source/interfaces/IMapReducedProperty.ts",
+      "../source/interfaces/IProperty.ts",
+      "../source/interfaces/IRelationship.ts",
+      "../source/interfaces/IEntity.ts",
       "../node_modules/@types/mongoose/index.d.ts",
-      "../source/mongo/getdb.ts",
-      "../source/mongo/getcollectionbyname.ts",
-      "../source/mongo/getdbcollectionnames.ts",
-      "../source/mongo/getcollectionnamebydocumentid.ts",
-      "../source/entity/getrelationshiptype.ts",
-      "../source/mongo/mapreducecollectionproperties.ts",
-      "../source/entity/makeentity.ts",
-      "../source/filesystem/filesystem.ts",
+      "../source/mongo/getDB.ts",
+      "../source/mongo/getCollectionByName.ts",
+      "../source/mongo/getDBCollectionNames.ts",
+      "../source/mongo/getCollectionNameByDocumentID.ts",
+      "../source/entity/getRelationshipType.ts",
+      "../source/mongo/mapReduceCollectionProperties.ts",
+      "../source/fileSystem/FileSystem.ts",
+      "../node_modules/@types/graphviz/index.d.ts",
+      "../source/outputPlugins/convertEntitiesToDotLanguageAndGeneratePNGFile.ts",
       "../node_modules/@types/cli-spinner/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../source/commands/cli/cli.ts",
-      "../source/tests/collections/photo.ts",
-      "../source/tests/collections/user.ts",
-      "../source/tests/collections/usergroup.ts",
-      "../source/tests/dbsetup.ts",
-      "../source/tests/dbteardown.ts",
-      "../source/entity/__tests__/makeentity.tests.ts",
-      "../source/entity/__tests__/typeof.tests.ts",
-      "../source/mongo/__tests__/mapreducecollectionproperties.tests.ts",
+      "../source/commands/CLI/CLI.ts",
+      "../source/tests/collections/Photo.ts",
+      "../source/tests/collections/User.ts",
+      "../source/tests/collections/UserGroup.ts",
+      "../source/tests/dbSetup.ts",
+      "../source/commands/__tests__/getERD.tests.ts",
+      "../source/tests/dbTeardown.ts",
+      "../source/entity/__tests__/makeEntity.tests.ts",
+      "../source/entity/__tests__/typeOf.tests.ts",
+      "../source/mongo/__tests__/mapReduceCollectionProperties.tests.ts",
+      "../source/outputPlugins/__tests__/ERD.mock.ts",
+      "../source/outputPlugins/__tests__/convertEntitiesToDotLanguageAndGeneratePNGFile.tests.ts",
       "../source/tests/setup.ts",
       "../node_modules/jest-diff/build/types.d.ts",
       "../node_modules/jest-diff/build/index.d.ts",
       "../node_modules/@types/jest/index.d.ts",
-      "../source/commands/geterd.ts",
-      "../source/commands/__tests__/geterd.tests.ts"
+      "../source/entity/makeEntity.ts",
+      "../source/commands/getERD.ts"
     ]
   },
   "version": "3.7.2"
