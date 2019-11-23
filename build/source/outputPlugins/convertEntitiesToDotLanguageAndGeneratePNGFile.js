@@ -27,8 +27,11 @@ function convertEntitiesToDotLanguageAndGeneratePNGFile(entities, filepath) {
                 graph.addEdge(entity.name, relationship.targetCollectionName);
         }
     }
-    if (filepath)
-        graph.output('png', path_1.resolve(filepath));
+    if (filepath) {
+        graph.output('png', path_1.resolve(filepath + '.png'));
+        graph.output('svg', path_1.resolve(filepath + '.svg'));
+        graph.output('dot', path_1.resolve(filepath + '.dot'));
+    }
     return graph.to_dot();
 }
 exports.convertEntitiesToDotLanguageAndGeneratePNGFile = convertEntitiesToDotLanguageAndGeneratePNGFile;

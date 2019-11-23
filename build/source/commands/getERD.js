@@ -15,7 +15,7 @@ async function getERD(mongoURI, databaseName, outfile) {
     const entities = await Promise.all(collectionNames.map((name) => makeEntity_1.makeEntity(name)));
     if (outfile) {
         FileSystem_1.FileSystem.writeObjToFile(outfile + '.json', entities);
-        convertEntitiesToDotLanguageAndGeneratePNGFile_1.convertEntitiesToDotLanguageAndGeneratePNGFile(entities, outfile + '.png');
+        convertEntitiesToDotLanguageAndGeneratePNGFile_1.convertEntitiesToDotLanguageAndGeneratePNGFile(entities, outfile);
     }
     spinner.stop();
     return entities;

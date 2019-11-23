@@ -23,7 +23,7 @@ export async function getERD(
 
   if (outfile) {
     FileSystem.writeObjToFile(outfile + '.json', entities)
-    convertEntitiesToDotLanguageAndGeneratePNGFile(entities, outfile + '.png')
+    convertEntitiesToDotLanguageAndGeneratePNGFile(entities, outfile)
   }
 
   spinner.stop()

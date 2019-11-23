@@ -35,7 +35,11 @@ export function convertEntitiesToDotLanguageAndGeneratePNGFile(
     }
   }
 
-  if (filepath) graph.output('png', resolve(filepath))
+  if (filepath) {
+    graph.output('png', resolve(filepath + '.png'))
+    graph.output('svg', resolve(filepath + '.svg'))
+    graph.output('dot', resolve(filepath + '.dot'))
+  }
 
   return graph.to_dot()
 }
