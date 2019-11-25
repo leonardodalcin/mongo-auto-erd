@@ -17,6 +17,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: installs graphviz
+        run: |
+          apt-get install graphviz
+      env:
+        CI: true
       - name: npm install and build
         run: |
           npm ci
