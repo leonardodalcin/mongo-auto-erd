@@ -1,15 +1,17 @@
 {
-  "name": "@leonardodalcin/mongo-auto-erd",
-  "version": "1.0.1",
-  "main": "build/index.js",
+  "name": "mongo-auto-erd",
+  "version": "1.0.2",
+  "main": "source/commands/CLI/CLI.js",
   "license": "MIT",
   "repository": "https://github.com/leonardodalcin/mongo-auto-erd.git",
+  "description": "Generates a .png ERD of a mongo database through a CLI",
   "bin": {
-    "mongo-erd": "build/source/commands/CLI/CLI.js"
+    "mongo-erd": "source/commands/CLI/CLI.js"
   },
   "scripts": {
     "build": "tsc -b",
     "lint": "concurrently 'prettier --write source/**/*.ts --write' 'tslint --config tslint.json --project tsconfig.json --fix' 'tsc --noEmit'",
+    "publish": "npm run build && copyfiles ./package.json ./README.md ./erd.png build && cd build && npm publish",
     "test": "jest --forceExit"
   },
   "dependencies": {
@@ -19,10 +21,10 @@
     "module-alias": "^2.2.2",
     "mongodb": "^3.3.2",
     "node-spinner": "^0.0.4",
-    "ts-graphviz": "0.0.4",
     "yargs": "^14.2.0"
   },
   "devDependencies": {
+    "copyfiles": "^2.1.1",
     "@shelf/jest-mongodb": "^1.1.1",
     "@types/cli-spinner": "^0.2.0",
     "@types/graphviz": "0.0.30",

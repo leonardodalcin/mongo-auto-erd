@@ -7,4 +7,7 @@ This is an Entity Relationship Diagram generator for MongoDB databases. Given a 
 ## Usage
 `mongo-erd --uri mongodb://127.0.0.1:27017 --db dbname --outfile ./erd`
 
-This command will produce a result like: https://github.com/leonardodalcin/mongo-auto-erd/blob/master/erd.json
+This command will produce a result like:
+
+![Example diagram](erd.png)
+
