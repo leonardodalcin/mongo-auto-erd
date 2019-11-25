@@ -12,7 +12,9 @@ export async function mapEntityRelationships(entity: IEntity): Promise<void> {
       return prop.types.some((type) => type === 'array')
     })
     .map((prop) => {
-      prop.values = flattenDeep(prop.values).filter((value) => typeOf(value) === 'objectId')
+      prop.values = flattenDeep(prop.values).filter(
+        (value) => typeOf(value) === 'objectId'
+      )
       prop.types = prop.values.map((value) => typeOf(value))
       return prop
     })

@@ -2,3 +2,6 @@
 /.idea/
 /coverage/
 /build/
+*.dot
+*.png
+*.svg

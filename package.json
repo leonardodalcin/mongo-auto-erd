@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "tsc -b",
-    "lint": "concurrently 'prettier --write source/**/*.ts --fix' 'tslint --config tslint.json --project tsconfig.json --fix' 'tsc --noEmit'",
+    "lint": "concurrently 'prettier --write source/**/*.ts --write' 'tslint --config tslint.json --project tsconfig.json --fix' 'tsc --noEmit'",
     "test": "jest --forceExit"
   },
   "dependencies": {

@@ -20,7 +20,7 @@ export async function mapReduceCollectionProperties(
     },
     function(key: any, values: any) {
       let result = []
-      if(Array.isArray(values)) {
+      if (Array.isArray(values)) {
         result = values
       } else {
         result.push(values)

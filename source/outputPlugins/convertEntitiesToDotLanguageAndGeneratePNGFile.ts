@@ -25,13 +25,14 @@ export function convertEntitiesToDotLanguageAndGeneratePNGFile(
   for (const entity of entities) {
     graph.addNode(entity.name, {
       label: entityToNodeLabel(entity),
-      shape: 'record',
+      shape: 'record'
     })
   }
   for (const entity of entities) {
     for (const relationship of entity.relationships) {
-      if (entity.name !== relationship.targetCollectionName)
+      if (entity.name !== relationship.targetCollectionName) {
         graph.addEdge(entity.name, relationship.targetCollectionName)
+      }
     }
   }
 
