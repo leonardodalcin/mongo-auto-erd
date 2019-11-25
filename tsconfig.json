@@ -1,10 +1,7 @@
 {
   "include": [
     "source/**/*.ts"
-  ],
-  "exclude": [
-    "source/**/*.tests.ts"
-  ],
+  ]
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
