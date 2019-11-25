@@ -24,8 +24,8 @@ export function convertEntitiesToDotLanguageAndGeneratePNGFile(
   const graph = digraph('erd')
   for (const entity of entities) {
     graph.addNode(entity.name, {
+      label: entityToNodeLabel(entity),
       shape: 'record',
-      label: entityToNodeLabel(entity)
     })
   }
   for (const entity of entities) {

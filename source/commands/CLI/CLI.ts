@@ -5,8 +5,8 @@ import { getERD } from '@commands/getERD'
 import * as yargs from 'yargs'
 
 (async () => {
-  process.on('unhandledRejection', up => {
-    throw up
+  process.on('unhandledRejection', (error) => {
+    throw error
   })
   const argv = yargs.options({
     db: { type: 'string', demandOption: true },
