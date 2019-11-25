@@ -1,7 +1,7 @@
 {
   "include": [
     "source/**/*.ts"
-  ]
+  ],
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
