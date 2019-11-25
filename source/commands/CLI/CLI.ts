@@ -6,7 +6,8 @@ import * as yargs from 'yargs'
 
 (async () => {
   process.on('unhandledRejection', (error) => {
-    throw error
+    // tslint:disable-next-line:no-console
+    console.error(error)
   })
   const argv = yargs.options({
     db: { type: 'string', demandOption: true },
