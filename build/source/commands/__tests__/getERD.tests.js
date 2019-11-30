@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const getERD_1 = require("@commands/getERD");
-const dbSetup_1 = require("@tests/dbSetup");
+const getERD_1 = require("../getERD");
+const dbSetup_1 = require("../../tests/dbSetup");
 describe('getERD', () => {
     beforeAll(async () => {
         await dbSetup_1.populateDatabase();

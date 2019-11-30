@@ -174,8 +174,8 @@
         "signature": "1444c3a9c3b02ef7b2ca910a43f4726b0e9c4e95ed74ed6f3da9e529fb15bca7"
       },
       "../node_modules/@types/node/globals.d.ts": {
-        "version": "6cf62fbc792aa81fa62f99dab5cc692c5315ecd5da09dd35f1ccc82778c4d5bc",
-        "signature": "6cf62fbc792aa81fa62f99dab5cc692c5315ecd5da09dd35f1ccc82778c4d5bc"
+        "version": "05c42320698cb6eb4052d68ef35a0f3b88291b9275f13e9a188b96119844c5b6",
+        "signature": "05c42320698cb6eb4052d68ef35a0f3b88291b9275f13e9a188b96119844c5b6"
       },
       "../node_modules/@types/node/assert.d.ts": {
         "version": "7860312f33f0cf2c93500787d02c4cc43ea3d0c080d4781095ac7715d5da3316",
@@ -189,9 +189,13 @@
         "version": "61215c1a376bbe8f51cab4cc4ddbf3746387015113c37a84d981d4738c21b878",
         "signature": "61215c1a376bbe8f51cab4cc4ddbf3746387015113c37a84d981d4738c21b878"
       },
+      "../node_modules/@types/events/index.d.ts": {
+        "version": "400db42c3a46984118bff14260d60cec580057dc1ab4c2d7310beb643e4f5935",
+        "signature": "400db42c3a46984118bff14260d60cec580057dc1ab4c2d7310beb643e4f5935"
+      },
       "../node_modules/@types/node/child_process.d.ts": {
-        "version": "163b9cd8ff3c8f1d4a7fd110099bb5d606a389c58233562516d70ac2d7e0ec7c",
-        "signature": "163b9cd8ff3c8f1d4a7fd110099bb5d606a389c58233562516d70ac2d7e0ec7c"
+        "version": "b61c2ff5ee2ff5ec8fb37b64be2713a6255d746e070dc5b26dd390006c74bfb5",
+        "signature": "b61c2ff5ee2ff5ec8fb37b64be2713a6255d746e070dc5b26dd390006c74bfb5"
       },
       "../node_modules/@types/node/cluster.d.ts": {
         "version": "ce629710e5e58724902b753212e97861fd73e2aa09f5d88cb6d55dc763cf8c8a",
@@ -206,12 +210,12 @@
         "signature": "0279383034fae92db8097d0a41350293553599cc9c3c917b60e2542d0dfcbd44"
       },
       "../node_modules/@types/node/crypto.d.ts": {
-        "version": "43f461871cd5ae52073e97d3c2e5869ebd955c42d30a51d3eb3a6c2cd16b80c4",
-        "signature": "43f461871cd5ae52073e97d3c2e5869ebd955c42d30a51d3eb3a6c2cd16b80c4"
+        "version": "3b6e751fc790e939efc4352e950b59be8c8e23c6e2bca2cf7359788b53f70485",
+        "signature": "3b6e751fc790e939efc4352e950b59be8c8e23c6e2bca2cf7359788b53f70485"
       },
       "../node_modules/@types/node/dgram.d.ts": {
-        "version": "7954df44c35d39b851b996fdc1af0a252e4e23f862abfef388a058203bb94c30",
-        "signature": "7954df44c35d39b851b996fdc1af0a252e4e23f862abfef388a058203bb94c30"
+        "version": "387656ed4d6444031a0042c38701167e77ff5f4698ada32737082fbee76b1db0",
+        "signature": "387656ed4d6444031a0042c38701167e77ff5f4698ada32737082fbee76b1db0"
       },
       "../node_modules/@types/node/dns.d.ts": {
         "version": "ef226a42de7022eacdfa0f15aabf73b46c47af93044c8ebfab8aa8e3cf6c330c",
@@ -230,8 +234,8 @@
         "signature": "91b0f655867e04d42d86347eb12b78316faed8bd2c75a7f8400e43e9e34e4ebd"
       },
       "../node_modules/@types/node/http.d.ts": {
-        "version": "d5470fad800f025be0c4bd1b14c013ea5b4aeec90e53ab0e2703a8fe01f292b3",
-        "signature": "d5470fad800f025be0c4bd1b14c013ea5b4aeec90e53ab0e2703a8fe01f292b3"
+        "version": "4fd41897e21cc6def2735221fa7bd0986b44e44d224939a20f9e173ba2255646",
+        "signature": "4fd41897e21cc6def2735221fa7bd0986b44e44d224939a20f9e173ba2255646"
       },
       "../node_modules/@types/node/http2.d.ts": {
         "version": "272c8598c3a29a3fa3027bd0a645c5f49b3f7832dfcf8e47b7260843ec8a40f3",
@@ -362,12 +366,12 @@
         "signature": "0ec6b4a83ed9564aa3247c8885e9bbef34380bf66ee260dedec5ba0578635817"
       },
       "../node_modules/@types/bson/index.d.ts": {
-        "version": "64118c8a43189b10dfe9d96a9478bcf7cd5b01c9d0f7838ee1454ece8a687253",
-        "signature": "64118c8a43189b10dfe9d96a9478bcf7cd5b01c9d0f7838ee1454ece8a687253"
+        "version": "92c84d1e3b77898d09f4f1f36a12ca85f371a623d9f053bb4792587ae14ad564",
+        "signature": "92c84d1e3b77898d09f4f1f36a12ca85f371a623d9f053bb4792587ae14ad564"
       },
       "../node_modules/@types/mongodb/index.d.ts": {
-        "version": "81a404cae978932b47d8660d7c737c663733934705bea86d28419f0a755adb70",
-        "signature": "81a404cae978932b47d8660d7c737c663733934705bea86d28419f0a755adb70"
+        "version": "22db6e417d9927bc936100f27522873e8a8ff436be88bceba0f443842cb4ad26",
+        "signature": "22db6e417d9927bc936100f27522873e8a8ff436be88bceba0f443842cb4ad26"
       },
       "../node_modules/mongodb-memory-server-core/lib/mongomemoryreplset.d.ts": {
         "version": "8453ca93e3136558a1c8a1ddd5245d90d1908069fc6769a069c30bb945e9b717",
@@ -470,8 +474,8 @@
         "signature": "e34f3f6159b1e23de9bb5521382795aaa5aaed6f53b4702e70a2ec45bc76ddb5"
       },
       "../node_modules/@types/lodash/ts3.1/common/util.d.ts": {
-        "version": "6f5b8dc10a22a8c88f65f2e72052caa535d45d6e867c1f899d96800b0a0efc42",
-        "signature": "6f5b8dc10a22a8c88f65f2e72052caa535d45d6e867c1f899d96800b0a0efc42"
+        "version": "2630a7cbb597e85d713b7ef47f2946d4280d3d4c02733282770741d40672b1a5",
+        "signature": "2630a7cbb597e85d713b7ef47f2946d4280d3d4c02733282770741d40672b1a5"
       },
       "../node_modules/@types/lodash/ts3.1/index.d.ts": {
         "version": "bbf144d4354e2aaa6439f32761f3ee798cc68d1600adab6e2a596f25269f106d",
@@ -518,7 +522,7 @@
         "signature": "989ea8e89ef2d6a07a1872fcee14be6b9e1920b04f19a4ab149d673f89af67e6"
       },
       "../source/commands/cli/cli.ts": {
-        "version": "1739a731fa5e1f299b3a77c371174157f669eecb4f05c8e59349a5870d64537e",
+        "version": "c9228eb605e45f08ba4c65886b33e3854c3801c9a1d20fe2cea5abe81d1ddc80",
         "signature": "43e818adf60173644896298637f47b01d5819b17eda46eaa32d0c7d64724d012"
       },
       "../source/tests/collections/photo.ts": {
@@ -903,6 +907,12 @@
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../node_modules/@types/node/buffer.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/events/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -2305,6 +2315,12 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../node_modules/@types/events/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../node_modules/@types/node/child_process.d.ts": [
         "../node_modules/@types/node/events.d.ts",
         "../node_modules/@types/node/net.d.ts",
@@ -2877,6 +2893,7 @@
       "../node_modules/@types/node/assert.d.ts",
       "../node_modules/@types/node/async_hooks.d.ts",
       "../node_modules/@types/node/buffer.d.ts",
+      "../node_modules/@types/events/index.d.ts",
       "../node_modules/@types/node/child_process.d.ts",
       "../node_modules/@types/node/cluster.d.ts",
       "../node_modules/@types/node/console.d.ts",

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const typeOf_1 = require("@entity/typeOf");
+const typeOf_1 = require("../typeOf");
 const mongodb_1 = require("mongodb");
 describe('typeOf', () => {
     const values = [

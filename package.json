@@ -1,7 +1,8 @@
 {
   "name": "mongo-auto-erd",
-  "version": "1.0.5",
-  "main": "source/commands/CLI/CLI.js",
+  "version": "1.0.14",
+  "main": "build/source/commands/CLI/CLI.js",
+  "files": ["build", "erd.png", "erd.json"],
   "license": "MIT",
   "author": {
     "name": "Leonardo Vogel Dalcin",
@@ -26,15 +27,14 @@
     "email": "leon.dalcin@gmail.com"
   },
   "bin": {
-    "mongo-erd": "source/commands/CLI/CLI.js"
+    "mongo-erd": "build/source/commands/CLI/CLI.js"
   },
   "scripts": {
-    "build:install": "cd build && npm install --only=prod",
-    "build:copy": "copyfiles ./package.json ./package-lock.json ./README.md ./erd.png ./erd.json build",
     "build:ts": "tsc -b",
-    "build:production": "npm run build:ts && npm run build:copy && npm run build:install",
+    "build:path:aliases": "tscpaths -p tsconfig.json -s ./ -o ./build",
+    "build:production": "npm run build:ts && npm run build:path:aliases",
     "lint": "concurrently 'prettier --write source/**/*.ts --write' 'tslint --config tslint.json --project tsconfig.json --fix' 'tsc --noEmit'",
-    "publish-registry": "npm run build:production cd build && npm publish",
+    "publish-registry": "npm run build:production && npm publish",
     "test": "jest --forceExit"
   },
   "dependencies": {
@@ -47,7 +47,6 @@
     "yargs": "^14.2.0"
   },
   "devDependencies": {
-    "copyfiles": "^2.1.1",
     "@shelf/jest-mongodb": "^1.1.1",
     "@types/cli-spinner": "^0.2.0",
     "@types/graphviz": "0.0.30",
@@ -57,21 +56,15 @@
     "@types/mongoose": "^5.5.30",
     "@types/yargs": "^13.0.3",
     "concurrently": "^5.0.0",
+    "copyfiles": "^2.1.1",
     "jest": "^24.9.0",
     "mongodb-memory-server": "^6.0.1",
     "mongoose": "^5.7.8",
     "nodemon": "^1.19.3",
     "prettier": "^1.19.1",
     "ts-jest": "^24.1.0",
+    "tscpaths": "0.0.9",
     "tslint": "^5.20.0",
     "typescript": "^3.7.2"
-  },
-  "_moduleAliases": {
-    "@mongo": "source/mongo/",
-    "@interfaces": "source/interfaces/",
-    "@commands": "source/commands/",
-    "@fileSystem": "source/fileSystem/",
-    "@entity": "source/entity/",
-    "@outputPlugins": "source/outputPlugins/"
   }
 }

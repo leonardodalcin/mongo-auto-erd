@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const makeEntity_1 = require("@entity/makeEntity");
-const FileSystem_1 = require("@fileSystem/FileSystem");
-const getDB_1 = require("@mongo/getDB");
-const getDBCollectionNames_1 = require("@mongo/getDBCollectionNames");
-const convertEntitiesToDotLanguageAndGeneratePNGFile_1 = require("@outputPlugins/convertEntitiesToDotLanguageAndGeneratePNGFile");
+const makeEntity_1 = require("../entity/makeEntity");
+const FileSystem_1 = require("../fileSystem/FileSystem");
+const getDB_1 = require("../mongo/getDB");
+const getDBCollectionNames_1 = require("../mongo/getDBCollectionNames");
+const convertEntitiesToDotLanguageAndGeneratePNGFile_1 = require("../outputPlugins/convertEntitiesToDotLanguageAndGeneratePNGFile");
 const cli_spinner_1 = require("cli-spinner");
 async function getERD(mongoURI, databaseName, outfile) {
     const spinner = new cli_spinner_1.Spinner();

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const typeOf_1 = require("@entity/typeOf");
-const getCollectionNameByDocumentID_1 = require("@mongo/getCollectionNameByDocumentID");
+const typeOf_1 = require("./typeOf");
+const getCollectionNameByDocumentID_1 = require("../mongo/getCollectionNameByDocumentID");
 const lodash_1 = require("lodash");
 async function mapEntityRelationships(entity) {
     const oidProperties = entity.properties.filter((prop) => {

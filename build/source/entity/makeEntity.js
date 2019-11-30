@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const getRelationshipType_1 = require("@entity/getRelationshipType");
-const typeOf_1 = require("@entity/typeOf");
-const mapReduceCollectionProperties_1 = require("@mongo/mapReduceCollectionProperties");
+const getRelationshipType_1 = require("./getRelationshipType");
+const typeOf_1 = require("./typeOf");
+const mapReduceCollectionProperties_1 = require("../mongo/mapReduceCollectionProperties");
 async function makeEntity(collectionName) {
     const reduced = await mapReduceCollectionProperties_1.mapReduceCollectionProperties(collectionName);
     const entity = {

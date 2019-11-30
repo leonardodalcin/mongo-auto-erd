@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 // tslint:disable-next-line:no-require-imports no-var-requires
-require('module-alias/register')
 import { getERD } from '@commands/getERD'
 import * as yargs from 'yargs'
 

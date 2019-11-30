@@ -1,5 +1,5 @@
-import { IProperty } from '@interfaces/IProperty';
-import { IRelationship } from '@interfaces/IRelationship';
+import { IProperty } from './IProperty';
+import { IRelationship } from './IRelationship';
 export interface IEntity {
     name: string;
     properties: IProperty[];

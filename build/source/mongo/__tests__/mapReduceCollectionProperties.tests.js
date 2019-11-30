@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const mapReduceCollectionProperties_1 = require("@mongo/mapReduceCollectionProperties");
-const dbSetup_1 = require("@tests/dbSetup");
-const dbTeardown_1 = require("@tests/dbTeardown");
+const mapReduceCollectionProperties_1 = require("../mapReduceCollectionProperties");
+const dbSetup_1 = require("../../tests/dbSetup");
+const dbTeardown_1 = require("../../tests/dbTeardown");
 describe('mapReduceCollectionProperties', () => {
     beforeAll(async () => {
         await dbSetup_1.populateDatabase();

@@ -1,2 +1,2 @@
-import { IEntity } from '@interfaces/IEntity';
+import { IEntity } from '../../interfaces/IEntity';
 export declare const ERD: IEntity[];

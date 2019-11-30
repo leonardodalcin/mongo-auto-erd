@@ -2,8 +2,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 // tslint:disable-next-line:no-require-imports no-var-requires
-require('module-alias/register');
-const getERD_1 = require("@commands/getERD");
+const getERD_1 = require("../getERD");
 const yargs = require("yargs");
 (async () => {
     process.on('unhandledRejection', (error) => {

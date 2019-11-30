@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const getDB_1 = require("@mongo/getDB");
+const getDB_1 = require("./getDB");
 // tslint:disable-next-line:max-line-length
 async function mapReduceCollectionProperties(collectionName, limitDocs = 50) {
     const db = await getDB_1.getDB();

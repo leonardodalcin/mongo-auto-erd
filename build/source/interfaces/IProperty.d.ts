@@ -1,5 +1,5 @@
-import { IMapReducedProperty } from '@interfaces/IMapReducedProperty';
-import { IPropertyType } from '@interfaces/IPropertyType';
+import { IMapReducedProperty } from './IMapReducedProperty';
+import { IPropertyType } from './IPropertyType';
 export interface IProperty extends IMapReducedProperty {
     types: IPropertyType[];
 }

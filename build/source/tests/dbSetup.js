@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Photo_1 = require("@tests/collections/Photo");
-const User_1 = require("@tests/collections/User");
-const UserGroup_1 = require("@tests/collections/UserGroup");
+const Photo_1 = require("./collections/Photo");
+const User_1 = require("./collections/User");
+const UserGroup_1 = require("./collections/UserGroup");
 const mongoose = require("mongoose");
 async function populateDatabase() {
     await mongoose.connect(await global.mongod.getUri(), {

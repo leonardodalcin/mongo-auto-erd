@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const getCollectionByName_1 = require("@mongo/getCollectionByName");
-const getDBCollectionNames_1 = require("@mongo/getDBCollectionNames");
+const getCollectionByName_1 = require("./getCollectionByName");
+const getDBCollectionNames_1 = require("./getDBCollectionNames");
 async function isIDInCollection(id, collectionName) {
     const collection = await getCollectionByName_1.getCollectionByName(collectionName);
     return !!(await collection.findOne({ _id: id }));

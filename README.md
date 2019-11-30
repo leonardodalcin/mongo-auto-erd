@@ -58,6 +58,7 @@ export interface IMapReducedProperty {
 
 `mongo-erd --uri mongodb://127.0.0.1:27017 --db dbname --outfile ./erd`
 
-This command will produce a result like:
+This command will produce a result like
 
-![Example diagram](erd.png)
+
+[Example .png diagram](erd.png)
