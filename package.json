@@ -5,7 +5,18 @@
   "license": "MIT",
   "repository": "https://github.com/leonardodalcin/mongo-auto-erd.git",
   "description": "Generates a .png ERD of a mongo database through a CLI",
-  "keywords": ['mongo', 'entity relation diagram', 'entity', 'relation', 'diagram', 'documentation', 'database', 'architecture', 'automatic', 'reverse engineering'],
+  "keywords": [
+    "mongo",
+    "entity relation diagram",
+    "entity",
+    "relation",
+    "diagram",
+    "documentation",
+    "database",
+    "architecture",
+    "automatic",
+    "reverse engineering"
+  ],
   "bin": {
     "mongo-erd": "source/commands/CLI/CLI.js"
   },
