@@ -2,7 +2,11 @@
   "name": "mongo-auto-erd",
   "version": "1.0.14",
   "main": "build/source/commands/CLI/CLI.js",
-  "files": ["build", "erd.png", "erd.json"],
+  "files": [
+    "build",
+    "erd.png",
+    "erd.json"
+  ],
   "license": "MIT",
   "author": {
     "name": "Leonardo Vogel Dalcin",
