@@ -5,13 +5,17 @@
   "license": "MIT",
   "repository": "https://github.com/leonardodalcin/mongo-auto-erd.git",
   "description": "Generates a .png ERD of a mongo database through a CLI",
+  "keywords": ['mongo', 'entity relation diagram', 'entity', 'relation', 'diagram', 'documentation', 'database', 'architecture', 'automatic', 'reverse engineering'],
   "bin": {
     "mongo-erd": "source/commands/CLI/CLI.js"
   },
   "scripts": {
-    "build": "tsc -b",
+    "build:install": "cd build && npm install --only=prod",
+    "build:copy": "copyfiles ./package.json ./package-lock.json ./README.md ./erd.png ./erd.json build",
+    "build:ts": "tsc -b",
+    "build:production": "npm run build:ts && npm run build:copy && npm run build:install",
     "lint": "concurrently 'prettier --write source/**/*.ts --write' 'tslint --config tslint.json --project tsconfig.json --fix' 'tsc --noEmit'",
-    "publish": "npm run build && copyfiles ./package.json ./README.md ./erd.png build && cd build && npm publish",
+    "publish": "npm run build:production cd build && npm publish",
     "test": "jest --forceExit"
   },
   "dependencies": {
