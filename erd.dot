@@ -1,0 +1,24 @@
+digraph erd {
+	graph [bb="0,0,215.81,196"];
+	node [label="\N"];
+	usergroups	[height=1.2083,
+		label="{usergroups | __v : number\l_id : objectId\lname : string\lusers : objectId}",
+		pos="50.766,152.5",
+		rects="0,173.5,101.53,195.5 0,109.5,101.53,173.5",
+		shape=record,
+		width=1.4102];
+	users	[height=1.0139,
+		label="{users | __v : number\l_id : objectId\lname : string}",
+		pos="108.77,36.5",
+		rects="63.438,50.5,154.09,72.5 63.438,0.5,154.09,50.5",
+		shape=record,
+		width=1.2591];
+	usergroups -> users	[pos="e,90.843,72.728 72.198,109.37 76.796,100.34 81.668,90.761 86.304,81.649"];
+	photos	[height=1.2083,
+		label="{photos | __v : number\l_id : objectId\ltitle : string\luser : objectId}",
+		pos="167.77,152.5",
+		rects="119.72,173.5,215.81,195.5 119.72,109.5,215.81,173.5",
+		shape=record,
+		width=1.3345];
+	photos -> users	[pos="e,127,72.728 145.96,109.37 141.29,100.34 136.33,90.761 131.61,81.649"];
+}

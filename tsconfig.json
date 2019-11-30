@@ -32,6 +32,9 @@
       ],
       "@tests/*": [
         "source/tests/*"
+      ],
+      "@outputPlugins/*": [
+        "source/outputPlugins/*"
       ]
     }
   }

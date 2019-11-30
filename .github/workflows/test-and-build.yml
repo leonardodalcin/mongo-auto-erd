@@ -1,6 +1,6 @@
 name: Node CI
 
-on: [pull_request, push]
+on: [push]
 
 jobs:
   build:
@@ -17,11 +17,15 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: installs graphviz
+        run: |
+          sudo apt-get install graphviz
+
       - name: npm install and build
         run: |
           npm ci
           npm install
-          npm run build
+          npm run build:ts
         env:
           CI: true
 

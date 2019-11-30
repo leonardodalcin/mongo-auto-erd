@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`convertEntitiesToDotLanguageAndGeneratePNGFile. should convert mock to a valid dot file 1`] = `
+"digraph erd {
+  \\"users\\" [ label = \\"{users | __v : number\\\\l_id : objectId\\\\lname : string}\\", shape =record ];
+  \\"photos\\" [ label = \\"{photos | __v : number\\\\l_id : objectId\\\\ltitle : string\\\\luser : objectId}\\", shape =record ];
+  \\"usergroups\\" [ label = \\"{usergroups | __v : number\\\\l_id : objectId\\\\lname : string\\\\lusers : objectId}\\", shape =record ];
+  \\"photos\\" -> \\"users\\";
+  \\"usergroups\\" -> \\"users\\";
+}
+"
+`;

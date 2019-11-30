@@ -5,14 +5,16 @@ import { flattenDeep } from 'lodash'
 
 export async function mapEntityRelationships(entity: IEntity): Promise<void> {
   const oidProperties = entity.properties.filter((prop) => {
-    return prop.types.some((type) => type === 'objectId')
+    return prop.types[0] === 'objectId'
   })
   const arrayProperties = entity.properties
     .filter((prop) => {
       return prop.types.some((type) => type === 'array')
     })
     .map((prop) => {
-      prop.values = flattenDeep(prop.values)
+      prop.values = flattenDeep(prop.values).filter(
+        (value) => typeOf(value) === 'objectId'
+      )
       prop.types = prop.values.map((value) => typeOf(value))
       return prop
     })

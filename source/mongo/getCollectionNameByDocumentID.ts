@@ -10,10 +10,15 @@ export async function getCollectionNameByDocumentID(
   id: ObjectId
 ): Promise<string | null> {
   const collectionNames = await getDBCollectionNames()
-  for (let i = 0; i < collectionNames.length; i++) {
-    if (await isIDInCollection(id, collectionNames[i])) {
-      return collectionNames[i]
-    }
-  }
-  return null
+  const responses = await Promise.all(
+    collectionNames.map(async (name) => {
+      if (await isIDInCollection(id, name)) {
+        return name
+      } else {
+        return null
+      }
+    })
+  )
+
+  return responses.find((name) => name !== null)
 }

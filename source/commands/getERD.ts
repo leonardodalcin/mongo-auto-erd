@@ -3,6 +3,7 @@ import { FileSystem } from '@fileSystem/FileSystem'
 import { IEntity } from '@interfaces/IEntity'
 import { getDB } from '@mongo/getDB'
 import { getDBCollectionNames } from '@mongo/getDBCollectionNames'
+import { convertEntitiesToDotLanguageAndGeneratePNGFile } from '@outputPlugins/convertEntitiesToDotLanguageAndGeneratePNGFile'
 import { Spinner } from 'cli-spinner'
 
 export async function getERD(
@@ -15,16 +16,21 @@ export async function getERD(
   spinner.setSpinnerTitle('Connecting to database')
   await getDB(mongoURI, databaseName)
   const collectionNames = await getDBCollectionNames()
-  const entities = []
-  const indexCount = collectionNames.length
-  let currentCollectionIndex = 1
-  for (const collectionName of collectionNames) {
-    spinner.setSpinnerTitle(`Defining entity for collection: ${collectionName}' +
-      ' (${currentCollectionIndex}/${indexCount}`)
-    entities.push(await makeEntity(collectionName))
-    currentCollectionIndex++
+
+  const entities = await Promise.all(
+    collectionNames.map((name) => makeEntity(name))
+  )
+  spinner.setSpinnerTitle('Trying to generate .svg, .png and .dot formats')
+  try {
+    convertEntitiesToDotLanguageAndGeneratePNGFile(entities, outfile)
+  } catch (e) {
+    spinner.setSpinnerTitle(
+      'Could not generate svg, .png and .dot formats, because graphviz is not installed'
+    )
   }
-  if (outfile) { FileSystem.writeObjToFile(outfile + '.json', entities) }
+  spinner.setSpinnerTitle('Generating .json format with')
+  FileSystem.writeObjToFile(outfile + '.json', entities)
+
   spinner.stop()
   return entities
 }

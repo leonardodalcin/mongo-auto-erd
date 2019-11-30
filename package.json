@@ -1,19 +1,49 @@
 {
-  "name": "@leonardodalcin/mongo-auto-erd",
-  "version": "1.0.1",
-  "main": "build/index.js",
+  "name": "mongo-auto-erd",
+  "version": "1.0.14",
+  "main": "build/source/commands/CLI/CLI.js",
+  "files": [
+    "build",
+    "erd.png",
+    "erd.json"
+  ],
   "license": "MIT",
+  "author": {
+    "name": "Leonardo Vogel Dalcin",
+    "email": "leon.dalcin@gmail.com"
+  },
   "repository": "https://github.com/leonardodalcin/mongo-auto-erd.git",
+  "description": "Generates a .png ERD of a mongo database through a CLI",
+  "keywords": [
+    "mongo",
+    "entity relation diagram",
+    "entity",
+    "relation",
+    "diagram",
+    "documentation",
+    "database",
+    "architecture",
+    "automatic",
+    "reverse engineering"
+  ],
+  "bugs": {
+    "url": "https://github.com/leonardodalcin/mongo-auto-erd/issues",
+    "email": "leon.dalcin@gmail.com"
+  },
   "bin": {
     "mongo-erd": "build/source/commands/CLI/CLI.js"
   },
   "scripts": {
-    "build": "tsc -b",
-    "lint": "concurrently 'prettier --write source/**/*.ts --fix' 'tslint --config tslint.json --project tsconfig.json --fix' 'tsc --noEmit'",
+    "build:ts": "tsc -b",
+    "build:path:aliases": "tscpaths -p tsconfig.json -s ./ -o ./build",
+    "build:production": "npm run build:ts && npm run build:path:aliases",
+    "lint": "concurrently 'prettier --write source/**/*.ts --write' 'tslint --config tslint.json --project tsconfig.json --fix' 'tsc --noEmit'",
+    "publish-registry": "npm run build:production && npm publish",
     "test": "jest --forceExit"
   },
   "dependencies": {
     "cli-spinner": "^0.2.10",
+    "graphviz": "0.0.9",
     "lodash": "^4.17.15",
     "module-alias": "^2.2.2",
     "mongodb": "^3.3.2",
@@ -22,30 +52,23 @@
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "^1.1.1",
-    "concurrently": "^5.0.0",
     "@types/cli-spinner": "^0.2.0",
+    "@types/graphviz": "0.0.30",
     "@types/jest": "^24.0.18",
     "@types/lodash": "^4.14.148",
     "@types/mongodb": "^3.3.5",
     "@types/mongoose": "^5.5.30",
     "@types/yargs": "^13.0.3",
+    "concurrently": "^5.0.0",
+    "copyfiles": "^2.1.1",
     "jest": "^24.9.0",
     "mongodb-memory-server": "^6.0.1",
     "mongoose": "^5.7.8",
     "nodemon": "^1.19.3",
     "prettier": "^1.19.1",
     "ts-jest": "^24.1.0",
+    "tscpaths": "0.0.9",
     "tslint": "^5.20.0",
     "typescript": "^3.7.2"
-  },
-  "_moduleAliases": {
-    "@mongo": "build/source/mongo/",
-    "@interfaces": "build/source/interfaces/",
-    "@commands": "build/source/commands/",
-    "@fileSystem": "build/source/fileSystem/",
-    "@entity": "build/source/entity/"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   }
 }
