@@ -1,0 +1,79 @@
+{
+  "name": "mongo-auto-erd",
+  "version": "1.0.5",
+  "main": "source/commands/CLI/CLI.js",
+  "license": "MIT",
+  "author": {
+    "name": "Leonardo Vogel Dalcin",
+    "email": "leon.dalcin@gmail.com"
+  },
+  "repository": "https://github.com/leonardodalcin/mongo-auto-erd.git",
+  "description": "Generates a .png ERD of a mongo database through a CLI",
+  "keywords": [
+    "mongo",
+    "entity relation diagram",
+    "entity",
+    "relation",
+    "diagram",
+    "documentation",
+    "database",
+    "architecture",
+    "automatic",
+    "reverse engineering"
+  ],
+  "bugs": {
+    "url": "https://github.com/leonardodalcin/mongo-auto-erd/issues",
+    "email": "leon.dalcin@gmail.com"
+  },
+  "bin": {
+    "mongo-erd": "source/commands/CLI/CLI.js"
+  },
+  "scripts": {
+    "build:install": "cd build && npm install --only=prod",
+    "build:copy": "copyfiles ./package.json ./package-lock.json ./README.md ./erd.png ./erd.json build",
+    "build:ts": "tsc -b",
+    "build:production": "npm run build:ts && npm run build:copy && npm run build:install",
+    "lint": "concurrently 'prettier --write source/**/*.ts --write' 'tslint --config tslint.json --project tsconfig.json --fix' 'tsc --noEmit'",
+    "publish-registry": "npm run build:production cd build && npm publish",
+    "test": "jest --forceExit"
+  },
+  "dependencies": {
+    "build": "^0.1.4",
+    "cd": "^0.3.3",
+    "cli-spinner": "^0.2.10",
+    "graphviz": "0.0.9",
+    "lodash": "^4.17.15",
+    "module-alias": "^2.2.2",
+    "mongodb": "^3.3.2",
+    "node-spinner": "^0.0.4",
+    "yargs": "^14.2.0"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.1.1",
+    "@shelf/jest-mongodb": "^1.1.1",
+    "@types/cli-spinner": "^0.2.0",
+    "@types/graphviz": "0.0.30",
+    "@types/jest": "^24.0.18",
+    "@types/lodash": "^4.14.148",
+    "@types/mongodb": "^3.3.5",
+    "@types/mongoose": "^5.5.30",
+    "@types/yargs": "^13.0.3",
+    "concurrently": "^5.0.0",
+    "jest": "^24.9.0",
+    "mongodb-memory-server": "^6.0.1",
+    "mongoose": "^5.7.8",
+    "nodemon": "^1.19.3",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.1.0",
+    "tslint": "^5.20.0",
+    "typescript": "^3.7.2"
+  },
+  "_moduleAliases": {
+    "@mongo": "source/mongo/",
+    "@interfaces": "source/interfaces/",
+    "@commands": "source/commands/",
+    "@fileSystem": "source/fileSystem/",
+    "@entity": "source/entity/",
+    "@outputPlugins": "source/outputPlugins/"
+  }
+}

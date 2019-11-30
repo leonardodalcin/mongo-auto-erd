@@ -1,6 +1,6 @@
 {
   "name": "mongo-auto-erd",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "main": "source/commands/CLI/CLI.js",
   "license": "MIT",
   "author": {
@@ -34,7 +34,7 @@
     "build:ts": "tsc -b",
     "build:production": "npm run build:ts && npm run build:copy && npm run build:install",
     "lint": "concurrently 'prettier --write source/**/*.ts --write' 'tslint --config tslint.json --project tsconfig.json --fix' 'tsc --noEmit'",
-    "publish": "npm run build:production cd build && npm publish",
+    "publish-registry": "npm run build:production cd build && npm publish",
     "test": "jest --forceExit"
   },
   "dependencies": {
@@ -67,11 +67,11 @@
     "typescript": "^3.7.2"
   },
   "_moduleAliases": {
-    "@mongo": "build/source/mongo/",
-    "@interfaces": "build/source/interfaces/",
-    "@commands": "build/source/commands/",
-    "@fileSystem": "build/source/fileSystem/",
-    "@entity": "build/source/entity/",
-    "@outputPlugins": "build/source/outputPlugins/"
+    "@mongo": "source/mongo/",
+    "@interfaces": "source/interfaces/",
+    "@commands": "source/commands/",
+    "@fileSystem": "source/fileSystem/",
+    "@entity": "source/entity/",
+    "@outputPlugins": "source/outputPlugins/"
   }
 }
