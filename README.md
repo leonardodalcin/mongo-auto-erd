@@ -61,4 +61,4 @@ export interface IMapReducedProperty {
 This command will produce a result like
 
 
-[Example .png diagram](erd.png)
+![Example .png diagram](erd.png)
