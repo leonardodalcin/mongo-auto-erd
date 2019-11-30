@@ -20,12 +20,16 @@ export async function getERD(
   const entities = await Promise.all(
     collectionNames.map((name) => makeEntity(name))
   )
-
-  if (outfile) {
+  spinner.setSpinnerTitle('Trying to generate .svg, .png and .dot formats')
+  try {
     convertEntitiesToDotLanguageAndGeneratePNGFile(entities, outfile)
-  } else {
-    FileSystem.writeObjToFile('erd.json', entities)
+  } catch (e) {
+    spinner.setSpinnerTitle(
+      'Could not generate svg, .png and .dot formats, because graphviz is not installed'
+    )
   }
+  spinner.setSpinnerTitle('Generating .json format with')
+  FileSystem.writeObjToFile(outfile + '.json', entities)
 
   spinner.stop()
   return entities
