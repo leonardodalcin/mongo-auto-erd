@@ -3,6 +3,10 @@
   "version": "1.0.2",
   "main": "source/commands/CLI/CLI.js",
   "license": "MIT",
+  "author": {
+    "name": "Leonardo Vogel Dalcin",
+    "email": "leon.dalcin@gmail.com"
+  },
   "repository": "https://github.com/leonardodalcin/mongo-auto-erd.git",
   "description": "Generates a .png ERD of a mongo database through a CLI",
   "keywords": [
@@ -17,6 +21,10 @@
     "automatic",
     "reverse engineering"
   ],
+  "bugs": {
+    "url": "https://github.com/leonardodalcin/mongo-auto-erd/issues",
+    "email": "leon.dalcin@gmail.com"
+  },
   "bin": {
     "mongo-erd": "source/commands/CLI/CLI.js"
   },
