@@ -1,6 +1,6 @@
 {
   "name": "mongo-auto-erd",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "main": "build/source/commands/CLI/CLI.js",
   "files": [
     "build",
@@ -48,7 +48,8 @@
     "module-alias": "^2.2.2",
     "mongodb": "^3.3.2",
     "node-spinner": "^0.0.4",
-    "yargs": "^14.2.0"
+    "yargs": "^14.2.0",
+    "mongoose": "^5.7.8"
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "^1.1.1",
@@ -63,7 +64,6 @@
     "copyfiles": "^2.1.1",
     "jest": "^24.9.0",
     "mongodb-memory-server": "^6.0.1",
-    "mongoose": "^5.7.8",
     "nodemon": "^1.19.3",
     "prettier": "^1.19.1",
     "ts-jest": "^24.1.0",
