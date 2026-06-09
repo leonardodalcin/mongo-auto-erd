@@ -24,7 +24,7 @@ export interface IEntity {
   relationships: IRelationship[]
 }
 
-export interface IProperty extends IMapReducedProperty {
+export interface IProperty extends IAggregatedProperty {
   types: IPropertyType[]
 }
 
@@ -47,7 +47,7 @@ export interface IRelationship {
   targetCollectionName: string
 }
 
-export interface IMapReducedProperty {
+export interface IAggregatedProperty {
   name: string
   values: any[]
 }

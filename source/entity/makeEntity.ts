@@ -1,10 +1,10 @@
 import { mapEntityRelationships } from '@entity/getRelationshipType'
 import { typeOf } from '@entity/typeOf'
 import { IEntity } from '@interfaces/IEntity'
-import { mapReduceCollectionProperties } from '@mongo/mapReduceCollectionProperties'
+import { aggregateCollectionProperties } from '@mongo/aggregateCollectionProperties'
 
 export async function makeEntity(collectionName: string) {
-  const reduced = await mapReduceCollectionProperties(collectionName)
+  const reduced = await aggregateCollectionProperties(collectionName)
   const entity: IEntity = {
     name: collectionName,
     properties: reduced.map((p) => {
