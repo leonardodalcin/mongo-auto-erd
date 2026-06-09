@@ -8,44 +8,26 @@ export async function mapReduceCollectionProperties(
 ): Promise<IMapReducedProperty[]> {
   const db = await getDB()
   const collection = await db.collection(collectionName)
-  /* istanbul ignore next */
-  const mapResult = (await collection.mapReduce(
-    function() {
-      // @ts-ignore
-      // tslint:disable-next-line
-      for (let key in this) {
-        // @ts-ignore
-        emit(key, this[key])
-      }
-    },
-    function(key: any, values: any) {
-      let result = []
-      if (Array.isArray(values)) {
-        result = values
-      } else {
-        result.push(values)
-      }
-      return {
-        name: key,
-        values: result
-      }
-    },
-    { out: { inline: 1 }, limit: limitDocs }
-  )) as Array<{ _id: string; value: IMapReducedProperty }>
 
-  return mapResult
-    .map((item) => {
-      if (typeof item.value === 'object') {
-        if (!Array.isArray(item.value.values)) {
-          item.value.values = [item.value.values]
-        }
-        return item.value
-      } else {
-        return {
-          name: item._id,
-          values: [item.value]
-        }
-      }
-    })
-    .filter((result) => result !== null) as IMapReducedProperty[]
+  // We sample up to `limitDocs` documents and collect, for each top-level
+  // field, every value observed across the sampled documents. This used to be
+  // implemented with `collection.mapReduce`, but MongoDB Atlas (and other
+  // managed deployments) disallow the `mapReduce` command, failing with
+  // `CMD_NOT_ALLOWED: mapReduce`. The aggregation pipeline below produces the
+  // same result and is supported everywhere.
+  const aggregationResult = (await collection
+    .aggregate([
+      { $limit: limitDocs },
+      { $project: { properties: { $objectToArray: '$$ROOT' } } },
+      { $unwind: '$properties' },
+      { $group: { _id: '$properties.k', values: { $push: '$properties.v' } } }
+    ])
+    .toArray()) as Array<{ _id: string; values: any[] }>
+
+  return aggregationResult.map((item) => {
+    return {
+      name: item._id,
+      values: item.values
+    }
+  })
 }
