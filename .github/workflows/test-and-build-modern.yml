@@ -1,0 +1,67 @@
+name: Node CI (modern)
+
+# Modern support matrix: maintained Node releases tested against a range of
+# MongoDB server versions. The MongoDB version is selected per matrix entry
+# via the MONGOMS_VERSION environment variable, which mongodb-memory-server
+# uses to download the matching mongod binary.
+#
+# MONGOMS_VERSION is set at the job level (not just on the test step) so that
+# the mongodb-memory-server postinstall hook run during `npm ci` pre-downloads
+# the correct binary. Otherwise the binary would be fetched lazily inside the
+# test's beforeAll hook and exceed its timeout.
+#
+# The MongoDB array is 4.0.x / 4.2.x:
+#   - 3.6.x ships as an ubuntu1604 build linked against OpenSSL 1.0, which is
+#     not available on modern runners.
+#   - 4.4+ cannot be started by the pinned mongodb-memory-server@6.0.1 (its
+#     readiness detection does not recognise the newer startup output).
+# The dependency is pinned to keep the legacy Node 8/10/12 jobs in
+# test-and-build.yml working; testing newer servers would require upgrading it.
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+        mongodb-version: ['4.0.3', '4.2.8']
+
+    name: build (node ${{ matrix.node-version }}, mongo ${{ matrix.mongodb-version }})
+
+    env:
+      MONGOMS_VERSION: ${{ matrix.mongodb-version }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          # graphviz provides the `dot` binary used to render the ERD PNG.
+          sudo apt-get install -y graphviz
+          # The MongoDB 4.0/4.2 binaries are linked against OpenSSL 1.1. Modern
+          # Ubuntu runners ship OpenSSL 3, so install libssl1.1 to allow the
+          # bundled mongod to start.
+          curl -fsSL -o /tmp/libssl1.1.deb http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+          sudo dpkg -i /tmp/libssl1.1.deb
+
+      - name: Install dependencies and build
+        run: |
+          npm ci
+          npm run build:ts
+        env:
+          CI: true
+
+      - name: Test
+        run: npm test
+        env:
+          CI: true

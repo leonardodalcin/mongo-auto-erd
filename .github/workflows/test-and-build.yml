@@ -1,4 +1,8 @@
-name: Node CI
+name: Node CI (legacy)
+
+# Legacy support matrix: the original Node versions this project targeted,
+# tested against the default MongoDB version bundled by mongodb-memory-server
+# (4.0.3). Modern Node/MongoDB combinations live in test-and-build-modern.yml.
 
 on: [push, pull_request]
 
@@ -8,8 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
-        node-version: [18.x, 20.x, 22.x]
+        node-version: [8.x, 10.x, 12.x]
 
     steps:
       - uses: actions/checkout@v4
