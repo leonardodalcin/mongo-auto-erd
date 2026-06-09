@@ -1,6 +1,6 @@
-import { IMapReducedProperty } from '@interfaces/IMapReducedProperty'
+import { IAggregatedProperty } from '@interfaces/IAggregatedProperty'
 import { IPropertyType } from '@interfaces/IPropertyType'
 
-export interface IProperty extends IMapReducedProperty {
+export interface IProperty extends IAggregatedProperty {
   types: IPropertyType[]
 }
